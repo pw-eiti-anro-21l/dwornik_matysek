@@ -1,0 +1,37 @@
+[0.354s] Invoking command in '/home/kamil/dev_ws/src/src/dwornik_matysek/lab1': PYTHONPATH=/home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/lab1 build --build-base /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/build install --prefix /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1 --record /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/install.log --single-version-externally-managed
+[0.662s] running egg_info
+[0.663s] creating ../build/lab1/lab1.egg-info
+[0.664s] writing ../build/lab1/lab1.egg-info/PKG-INFO
+[0.664s] writing dependency_links to ../build/lab1/lab1.egg-info/dependency_links.txt
+[0.664s] writing entry points to ../build/lab1/lab1.egg-info/entry_points.txt
+[0.664s] writing requirements to ../build/lab1/lab1.egg-info/requires.txt
+[0.665s] writing top-level names to ../build/lab1/lab1.egg-info/top_level.txt
+[0.669s] writing manifest file '../build/lab1/lab1.egg-info/SOURCES.txt'
+[0.724s] reading manifest file '../build/lab1/lab1.egg-info/SOURCES.txt'
+[0.725s] writing manifest file '../build/lab1/lab1.egg-info/SOURCES.txt'
+[0.725s] running build
+[0.725s] running build_py
+[0.726s] creating /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/build
+[0.726s] creating /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/build/lib
+[0.726s] creating /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/build/lib/lab1
+[0.726s] copying lab1/__init__.py -> /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/build/lib/lab1
+[0.726s] copying lab1/publisher.py -> /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/build/lib/lab1
+[0.726s] running install
+[0.727s] running install_lib
+[0.731s] creating /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages/lab1
+[0.731s] copying /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/build/lib/lab1/__init__.py -> /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages/lab1
+[0.732s] copying /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/build/lib/lab1/publisher.py -> /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages/lab1
+[0.732s] byte-compiling /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages/lab1/__init__.py to __init__.cpython-38.pyc
+[0.735s] byte-compiling /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages/lab1/publisher.py to publisher.cpython-38.pyc
+[0.735s] running install_data
+[0.736s] creating /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/share/ament_index
+[0.737s] creating /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/share/ament_index/resource_index
+[0.737s] creating /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/share/ament_index/resource_index/packages
+[0.737s] copying resource/lab1 -> /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/share/ament_index/resource_index/packages
+[0.738s] copying package.xml -> /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/share/lab1
+[0.738s] running install_egg_info
+[0.741s] Copying ../build/lab1/lab1.egg-info to /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages/lab1-0.0.0-py3.8.egg-info
+[0.742s] running install_scripts
+[0.771s] Installing publisher script to /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/lab1
+[0.772s] writing list of installed files to '/home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/install.log'
+[0.799s] Invoked command in '/home/kamil/dev_ws/src/src/dwornik_matysek/lab1' returned '0': PYTHONPATH=/home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/lab1 build --build-base /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/build install --prefix /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1 --record /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/install.log --single-version-externally-managed
