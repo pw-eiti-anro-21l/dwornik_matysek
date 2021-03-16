@@ -22,7 +22,10 @@ def input_char(message):
             i=i+1
     except: raise
     finally:
-        curses.endwin()
+        try:
+            curses.endwin()
+        except:
+             pass
     return 0
 
 class Publisher(Node):
