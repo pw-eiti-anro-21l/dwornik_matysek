@@ -5,10 +5,12 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='turtlesim',
-            executable='turtlesim_node'
+            executable='turtlesim_node',
+            name='turtlesim'
         ),
         Node(
             package='lab1',
-            executable='publisher'
+            executable='publisher',
+            name='lab1'
         )
     ])
