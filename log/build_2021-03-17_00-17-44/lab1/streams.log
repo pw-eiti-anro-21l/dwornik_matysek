@@ -1,0 +1,21 @@
+[0.331s] Invoking command in '/home/kamil/dev_ws/src/src/dwornik_matysek/lab1': PYTHONPATH=/home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/lab1 build --build-base /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/build install --prefix /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1 --record /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/install.log --single-version-externally-managed
+[0.615s] running egg_info
+[0.616s] writing ../build/lab1/lab1.egg-info/PKG-INFO
+[0.616s] writing dependency_links to ../build/lab1/lab1.egg-info/dependency_links.txt
+[0.617s] writing entry points to ../build/lab1/lab1.egg-info/entry_points.txt
+[0.617s] writing requirements to ../build/lab1/lab1.egg-info/requires.txt
+[0.617s] writing top-level names to ../build/lab1/lab1.egg-info/top_level.txt
+[0.663s] reading manifest file '../build/lab1/lab1.egg-info/SOURCES.txt'
+[0.664s] writing manifest file '../build/lab1/lab1.egg-info/SOURCES.txt'
+[0.664s] running build
+[0.665s] running build_py
+[0.665s] running install
+[0.666s] running install_lib
+[0.667s] running install_data
+[0.668s] running install_egg_info
+[0.670s] removing '/home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages/lab1-0.0.0-py3.8.egg-info' (and everything under it)
+[0.670s] Copying ../build/lab1/lab1.egg-info to /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages/lab1-0.0.0-py3.8.egg-info
+[0.671s] running install_scripts
+[0.691s] Installing publisher script to /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/lab1
+[0.691s] writing list of installed files to '/home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/install.log'
+[0.721s] Invoked command in '/home/kamil/dev_ws/src/src/dwornik_matysek/lab1' returned '0': PYTHONPATH=/home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/lab1 build --build-base /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/build install --prefix /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1 --record /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/install.log --single-version-externally-managed

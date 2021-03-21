@@ -11,6 +11,7 @@ def generate_launch_description():
         Node(
             package='lab1',
             executable='publisher',
-            name='lab1'
+            name='lab1',
+            prefix="gnome-terminal --"
         )
     ])

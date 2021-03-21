@@ -4,37 +4,26 @@ import curses, time
 from geometry_msgs.msg import Twist
 from rclpy.exceptions import ParameterNotDeclaredException
 from rcl_interfaces.msg import ParameterType
-import errno
-import os
-import signal
 
-class TimeoutError(Exception):
-    pass
-class timeout:
-    def __init__(self, seconds=1, error_message='Timeout'):
-        self.seconds = seconds
-        self.error_message = error_message
-    def handle_timeout(self, signum, frame):
-        raise TimeoutError(self.error_message)
-    def __enter__(self):
-        signal.signal(signal.SIGALRM, self.handle_timeout)
-        signal.alarm(self.seconds)
-    def __exit__(self, type, value, traceback):
-        signal.alarm(0)
 
-def input_char(message, tim):
+
+def input_char(message):
     try:
-        with timeout(seconds= tim):
-            win = curses.initscr()
-            win.addstr(0, 0, message)
-            while True:
-                ch = win.getch()
-                if ch in range(32, 127): break
-                time.sleep(0.05)
-    except: return 0,1
+        win = curses.initscr()
+        win.addstr(0, 0, message)
+        i=0
+        while i<21:
+            win.nodelay(True)
+            ch = win.getch()
+            if ch in range(32, 127):
+                curses.endwin()
+                return chr(ch)
+            time.sleep(0.05)
+            i=i+1
+    except: raise
     finally:
         curses.endwin()
-    return chr(ch), 3
+    return 0
 
 class Publisher(Node):
 
@@ -46,7 +35,6 @@ class Publisher(Node):
         self.declare_parameter('lewo','a')
         self.declare_parameter('prawo','d')
         timer_period = 2  # seconds
-        self.timee=1
         self.timer = self.create_timer(timer_period, self.control)
 
     def get_param(self):
@@ -59,7 +47,7 @@ class Publisher(Node):
     def control(self):
         msg = Twist()
         params = self.get_param()
-        c, self.timee = input_char("sterowanie", self.timee)
+        c = input_char("sterowanie\n")
         if (c == params[0]):
             msg.linear.x = -1.0
             msg.angular.z = 0.0
@@ -77,10 +65,8 @@ class Publisher(Node):
             msg.angular.z = -1.0
             self.publisher_.publish(msg)
         else:
-            self.timee= 1
             return
         self.control()
-        
     
 def main(args=None):
     rclpy.init(args=args)

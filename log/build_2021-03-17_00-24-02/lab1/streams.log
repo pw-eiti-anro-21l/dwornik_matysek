@@ -1,0 +1,24 @@
+[0.331s] Invoking command in '/home/kamil/dev_ws/src/src/dwornik_matysek/lab1': PYTHONPATH=/home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/lab1 build --build-base /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/build install --prefix /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1 --record /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/install.log --single-version-externally-managed
+[0.644s] running egg_info
+[0.645s] writing ../build/lab1/lab1.egg-info/PKG-INFO
+[0.645s] writing dependency_links to ../build/lab1/lab1.egg-info/dependency_links.txt
+[0.645s] writing entry points to ../build/lab1/lab1.egg-info/entry_points.txt
+[0.646s] writing requirements to ../build/lab1/lab1.egg-info/requires.txt
+[0.646s] writing top-level names to ../build/lab1/lab1.egg-info/top_level.txt
+[0.694s] reading manifest file '../build/lab1/lab1.egg-info/SOURCES.txt'
+[0.695s] writing manifest file '../build/lab1/lab1.egg-info/SOURCES.txt'
+[0.695s] running build
+[0.695s] running build_py
+[0.696s] copying lab1/publisher.py -> /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/build/lib/lab1
+[0.696s] running install
+[0.697s] running install_lib
+[0.698s] copying /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/build/lib/lab1/publisher.py -> /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages/lab1
+[0.699s] byte-compiling /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages/lab1/publisher.py to publisher.cpython-38.pyc
+[0.701s] running install_data
+[0.702s] running install_egg_info
+[0.704s] removing '/home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages/lab1-0.0.0-py3.8.egg-info' (and everything under it)
+[0.704s] Copying ../build/lab1/lab1.egg-info to /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages/lab1-0.0.0-py3.8.egg-info
+[0.705s] running install_scripts
+[0.728s] Installing publisher script to /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/lab1
+[0.728s] writing list of installed files to '/home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/install.log'
+[0.761s] Invoked command in '/home/kamil/dev_ws/src/src/dwornik_matysek/lab1' returned '0': PYTHONPATH=/home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/lab1 build --build-base /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/build install --prefix /home/kamil/dev_ws/src/src/dwornik_matysek/install/lab1 --record /home/kamil/dev_ws/src/src/dwornik_matysek/build/lab1/install.log --single-version-externally-managed
