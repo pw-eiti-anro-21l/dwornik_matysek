@@ -1,0 +1,78 @@
+[0.000000] (-) TimerEvent: {}
+[0.002779] (-) JobUnselected: {'identifier': 'lab1'}
+[0.002901] (-) JobUnselected: {'identifier': 'my_urdf'}
+[0.002962] (-) JobUnselected: {'identifier': 'turtlesim'}
+[0.003030] (urdf_tutorial) JobQueued: {'identifier': 'urdf_tutorial', 'dependencies': OrderedDict()}
+[0.003107] (urdf_tutorial) JobStarted: {'identifier': 'urdf_tutorial'}
+[0.096094] (-) TimerEvent: {}
+[0.197525] (-) TimerEvent: {}
+[0.298434] (-) TimerEvent: {}
+[0.399545] (-) TimerEvent: {}
+[0.524736] (-) TimerEvent: {}
+[0.625832] (-) TimerEvent: {}
+[0.726996] (-) TimerEvent: {}
+[0.827945] (-) TimerEvent: {}
+[0.952481] (-) TimerEvent: {}
+[1.053571] (-) TimerEvent: {}
+[1.154846] (-) TimerEvent: {}
+[1.255239] (-) TimerEvent: {}
+[1.355808] (-) TimerEvent: {}
+[1.480443] (-) TimerEvent: {}
+[1.581547] (-) TimerEvent: {}
+[1.682635] (-) TimerEvent: {}
+[1.781906] (urdf_tutorial) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--prefix', '/home/kamil/dev_ws/src/install/urdf_tutorial', '--editable', '--build-directory', '/home/kamil/dev_ws/src/build/urdf_tutorial/build', '--no-deps', 'install_data', '--install-dir', '/home/kamil/dev_ws/src/install/urdf_tutorial'], 'cwd': '/home/kamil/dev_ws/src/build/urdf_tutorial', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'kamil', 'SSH_AGENT_PID': '1348', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/kamil/dev_ws/install/turtlesim/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib', 'HOME': '/home/kamil', 'OLDPWD': '/home/kamil/dev_ws/src/my_urdf/launch', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '1014', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/kamil/dev_ws/src/install:/home/kamil/dev_ws/install', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'kamil', 'JOURNAL_STREAM': '8:38736', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'kamil', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/foxy/bin:/home/kamil/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/kamil-ThinkPad-W520:@/tmp/.ICE-unix/1391,unix/kamil-ThinkPad-W520:/tmp/.ICE-unix/1391', 'INVOCATION_ID': '718ae75b55c04dcd9d8c5d6795434b38', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/9247fddc_4040_4572_b964_46b9ef33c7ae', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'pl_PL.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.102', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/kamil/dev_ws/src/install/urdf_tutorial:/home/kamil/dev_ws/install/urdf_tutorial:/home/kamil/dev_ws/install/turtlesim:/opt/ros/foxy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/kamil/dev_ws/src/build/urdf_tutorial', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/kamil/dev_ws/src/install/urdf_tutorial/lib/python3.8/site-packages:/home/kamil/dev_ws/src/build/urdf_tutorial:/home/kamil/dev_ws/src/install/urdf_tutorial/lib/python3.8/site-packages:/home/kamil/dev_ws/build/urdf_tutorial:/home/kamil/dev_ws/install/urdf_tutorial/lib/python3.8/site-packages:/home/kamil/dev_ws/install/turtlesim/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'LC_NUMERIC': 'en_US.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/kamil/dev_ws/install/turtlesim'}, 'shell': False}
+[1.786117] (-) TimerEvent: {}
+[1.886968] (-) TimerEvent: {}
+[2.013494] (-) TimerEvent: {}
+[2.114600] (-) TimerEvent: {}
+[2.215663] (-) TimerEvent: {}
+[2.316507] (-) TimerEvent: {}
+[2.417442] (-) TimerEvent: {}
+[2.536514] (-) TimerEvent: {}
+[2.637537] (-) TimerEvent: {}
+[2.738542] (-) TimerEvent: {}
+[2.839074] (-) TimerEvent: {}
+[2.939432] (-) TimerEvent: {}
+[3.039785] (-) TimerEvent: {}
+[3.160464] (-) TimerEvent: {}
+[3.261571] (-) TimerEvent: {}
+[3.362626] (-) TimerEvent: {}
+[3.463643] (-) TimerEvent: {}
+[3.564649] (-) TimerEvent: {}
+[3.599974] (urdf_tutorial) StdoutLine: {'line': b'running develop\n'}
+[3.688516] (-) TimerEvent: {}
+[3.789600] (-) TimerEvent: {}
+[3.890653] (-) TimerEvent: {}
+[3.991689] (-) TimerEvent: {}
+[4.092452] (-) TimerEvent: {}
+[4.216246] (-) TimerEvent: {}
+[4.316851] (-) TimerEvent: {}
+[4.417522] (-) TimerEvent: {}
+[4.518851] (-) TimerEvent: {}
+[4.619572] (-) TimerEvent: {}
+[4.719940] (-) TimerEvent: {}
+[4.749955] (urdf_tutorial) StdoutLine: {'line': b'running egg_info\n'}
+[4.750354] (urdf_tutorial) StdoutLine: {'line': b'writing urdf_tutorial.egg-info/PKG-INFO\n'}
+[4.750675] (urdf_tutorial) StdoutLine: {'line': b'writing dependency_links to urdf_tutorial.egg-info/dependency_links.txt\n'}
+[4.750941] (urdf_tutorial) StdoutLine: {'line': b'writing entry points to urdf_tutorial.egg-info/entry_points.txt\n'}
+[4.751201] (urdf_tutorial) StdoutLine: {'line': b'writing requirements to urdf_tutorial.egg-info/requires.txt\n'}
+[4.751479] (urdf_tutorial) StdoutLine: {'line': b'writing top-level names to urdf_tutorial.egg-info/top_level.txt\n'}
+[4.840469] (-) TimerEvent: {}
+[4.907014] (urdf_tutorial) StdoutLine: {'line': b"reading manifest file 'urdf_tutorial.egg-info/SOURCES.txt'\n"}
+[4.908738] (urdf_tutorial) StdoutLine: {'line': b"writing manifest file 'urdf_tutorial.egg-info/SOURCES.txt'\n"}
+[4.940667] (-) TimerEvent: {}
+[5.041782] (-) TimerEvent: {}
+[5.142777] (-) TimerEvent: {}
+[5.188245] (urdf_tutorial) StdoutLine: {'line': b'running build_ext\n'}
+[5.188848] (urdf_tutorial) StdoutLine: {'line': b'Creating /home/kamil/dev_ws/src/install/urdf_tutorial/lib/python3.8/site-packages/urdf-tutorial.egg-link (link to .)\n'}
+[5.190743] (urdf_tutorial) StdoutLine: {'line': b'Installing state_publisher script to /home/kamil/dev_ws/src/install/urdf_tutorial/lib/urdf_tutorial\n'}
+[5.191464] (urdf_tutorial) StdoutLine: {'line': b'\n'}
+[5.191724] (urdf_tutorial) StdoutLine: {'line': b'Installed /home/kamil/dev_ws/src/build/urdf_tutorial\n'}
+[5.191953] (urdf_tutorial) StdoutLine: {'line': b'running install_data\n'}
+[5.192253] (urdf_tutorial) StdoutLine: {'line': b'copying urdf/r2d2.urdf.xml -> /home/kamil/dev_ws/src/install/urdf_tutorial/share/urdf_tutorial\n'}
+[5.242972] (-) TimerEvent: {}
+[5.343513] (-) TimerEvent: {}
+[5.390934] (urdf_tutorial) CommandEnded: {'returncode': 0}
+[5.466521] (-) TimerEvent: {}
+[5.528938] (urdf_tutorial) JobEnded: {'identifier': 'urdf_tutorial', 'rc': 0}
+[5.530374] (-) EventReactorShutdown: {}

@@ -1,0 +1,18 @@
+[1.363s] Invoking command in '/home/kamil/dev_ws/src/build/urdf_tutorial': PYTHONPATH=/home/kamil/dev_ws/src/install/urdf_tutorial/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/kamil/dev_ws/src/install/urdf_tutorial --editable --build-directory /home/kamil/dev_ws/src/build/urdf_tutorial/build --no-deps install_data --install-dir /home/kamil/dev_ws/src/install/urdf_tutorial
+[2.769s] running develop
+[3.669s] running egg_info
+[3.669s] writing urdf_tutorial.egg-info/PKG-INFO
+[3.670s] writing dependency_links to urdf_tutorial.egg-info/dependency_links.txt
+[3.671s] writing entry points to urdf_tutorial.egg-info/entry_points.txt
+[3.672s] writing requirements to urdf_tutorial.egg-info/requires.txt
+[3.673s] writing top-level names to urdf_tutorial.egg-info/top_level.txt
+[3.854s] reading manifest file 'urdf_tutorial.egg-info/SOURCES.txt'
+[3.855s] writing manifest file 'urdf_tutorial.egg-info/SOURCES.txt'
+[4.067s] running build_ext
+[4.070s] Creating /home/kamil/dev_ws/src/install/urdf_tutorial/lib/python3.8/site-packages/urdf-tutorial.egg-link (link to .)
+[4.071s] Installing state_publisher script to /home/kamil/dev_ws/src/install/urdf_tutorial/lib/urdf_tutorial
+[4.072s] 
+[4.073s] Installed /home/kamil/dev_ws/src/build/urdf_tutorial
+[4.075s] running install_data
+[4.076s] copying urdf/r2d2.urdf.xml -> /home/kamil/dev_ws/src/install/urdf_tutorial/share/urdf_tutorial
+[4.221s] Invoked command in '/home/kamil/dev_ws/src/build/urdf_tutorial' returned '0': PYTHONPATH=/home/kamil/dev_ws/src/install/urdf_tutorial/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/kamil/dev_ws/src/install/urdf_tutorial --editable --build-directory /home/kamil/dev_ws/src/build/urdf_tutorial/build --no-deps install_data --install-dir /home/kamil/dev_ws/src/install/urdf_tutorial
