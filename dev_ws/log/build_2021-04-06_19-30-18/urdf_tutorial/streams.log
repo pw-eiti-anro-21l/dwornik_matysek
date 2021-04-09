@@ -1,0 +1,18 @@
+[0.375s] Invoking command in '/home/kamil/dwornik_matysek/dev_ws/build/urdf_tutorial': PYTHONPATH=/home/kamil/dwornik_matysek/dev_ws/install/urdf_tutorial/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/kamil/dwornik_matysek/dev_ws/install/urdf_tutorial --editable --build-directory /home/kamil/dwornik_matysek/dev_ws/build/urdf_tutorial/build --no-deps install_data --install-dir /home/kamil/dwornik_matysek/dev_ws/install/urdf_tutorial
+[0.715s] running develop
+[0.912s] running egg_info
+[0.913s] writing urdf_tutorial.egg-info/PKG-INFO
+[0.913s] writing dependency_links to urdf_tutorial.egg-info/dependency_links.txt
+[0.913s] writing entry points to urdf_tutorial.egg-info/entry_points.txt
+[0.913s] writing requirements to urdf_tutorial.egg-info/requires.txt
+[0.913s] writing top-level names to urdf_tutorial.egg-info/top_level.txt
+[0.960s] reading manifest file 'urdf_tutorial.egg-info/SOURCES.txt'
+[0.961s] writing manifest file 'urdf_tutorial.egg-info/SOURCES.txt'
+[1.012s] running build_ext
+[1.012s] Creating /home/kamil/dwornik_matysek/dev_ws/install/urdf_tutorial/lib/python3.8/site-packages/urdf-tutorial.egg-link (link to .)
+[1.013s] Installing state_publisher script to /home/kamil/dwornik_matysek/dev_ws/install/urdf_tutorial/lib/urdf_tutorial
+[1.013s] 
+[1.013s] Installed /home/kamil/dwornik_matysek/dev_ws/build/urdf_tutorial
+[1.014s] running install_data
+[1.014s] copying urdf/r2d2.urdf.xml -> /home/kamil/dwornik_matysek/dev_ws/install/urdf_tutorial/share/urdf_tutorial
+[1.054s] Invoked command in '/home/kamil/dwornik_matysek/dev_ws/build/urdf_tutorial' returned '0': PYTHONPATH=/home/kamil/dwornik_matysek/dev_ws/install/urdf_tutorial/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/kamil/dwornik_matysek/dev_ws/install/urdf_tutorial --editable --build-directory /home/kamil/dwornik_matysek/dev_ws/build/urdf_tutorial/build --no-deps install_data --install-dir /home/kamil/dwornik_matysek/dev_ws/install/urdf_tutorial

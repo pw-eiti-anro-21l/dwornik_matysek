@@ -1,0 +1,28 @@
+[0.349s] Invoking command in '/home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/build/urdf_tutorial': PYTHONPATH=/home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial --editable --build-directory /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/build/urdf_tutorial/build --no-deps install_data --install-dir /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial
+[0.657s] running develop
+[0.839s] running egg_info
+[0.840s] creating urdf_tutorial.egg-info
+[0.840s] writing urdf_tutorial.egg-info/PKG-INFO
+[0.840s] writing dependency_links to urdf_tutorial.egg-info/dependency_links.txt
+[0.840s] writing entry points to urdf_tutorial.egg-info/entry_points.txt
+[0.840s] writing requirements to urdf_tutorial.egg-info/requires.txt
+[0.841s] writing top-level names to urdf_tutorial.egg-info/top_level.txt
+[0.842s] writing manifest file 'urdf_tutorial.egg-info/SOURCES.txt'
+[0.884s] reading manifest file 'urdf_tutorial.egg-info/SOURCES.txt'
+[0.884s] writing manifest file 'urdf_tutorial.egg-info/SOURCES.txt'
+[0.931s] running build_ext
+[0.931s] Creating /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial/lib/python3.8/site-packages/site.py
+[0.934s] Creating /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial/lib/python3.8/site-packages/urdf-tutorial.egg-link (link to .)
+[0.935s] Installing state_publisher script to /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial/lib/urdf_tutorial
+[0.936s] 
+[0.936s] Installed /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/build/urdf_tutorial
+[0.936s] running install_data
+[0.937s] creating /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial/share/ament_index
+[0.937s] creating /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial/share/ament_index/resource_index
+[0.937s] creating /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial/share/ament_index/resource_index/packages
+[0.937s] copying resource/urdf_tutorial -> /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial/share/ament_index/resource_index/packages
+[0.937s] copying package.xml -> /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial/share/urdf_tutorial
+[0.937s] copying launch/demo.launch.py -> /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial/share/urdf_tutorial
+[0.937s] copying urdf/r2d2.urdf.xml -> /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial/share/urdf_tutorial
+[0.937s] copying urdf/r2d2.rviz -> /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial/share/urdf_tutorial
+[0.972s] Invoked command in '/home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/build/urdf_tutorial' returned '0': PYTHONPATH=/home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial --editable --build-directory /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/build/urdf_tutorial/build --no-deps install_data --install-dir /home/kamil/dwornik_matysek/dev_ws/src/urdf_tutorial/install/urdf_tutorial

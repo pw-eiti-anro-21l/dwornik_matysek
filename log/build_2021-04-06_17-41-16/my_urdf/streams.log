@@ -1,0 +1,24 @@
+[0.350s] Invoking command in '/home/kamil/dwornik_matysek/build/my_urdf': PYTHONPATH=/home/kamil/dwornik_matysek/install/my_urdf/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/kamil/dwornik_matysek/install/my_urdf --editable --build-directory /home/kamil/dwornik_matysek/build/my_urdf/build --no-deps install_data --install-dir /home/kamil/dwornik_matysek/install/my_urdf
+[0.674s] running develop
+[0.866s] running egg_info
+[0.866s] creating my_urdf.egg-info
+[0.866s] writing my_urdf.egg-info/PKG-INFO
+[0.866s] writing dependency_links to my_urdf.egg-info/dependency_links.txt
+[0.867s] writing entry points to my_urdf.egg-info/entry_points.txt
+[0.867s] writing requirements to my_urdf.egg-info/requires.txt
+[0.867s] writing top-level names to my_urdf.egg-info/top_level.txt
+[0.874s] writing manifest file 'my_urdf.egg-info/SOURCES.txt'
+[0.927s] reading manifest file 'my_urdf.egg-info/SOURCES.txt'
+[0.927s] writing manifest file 'my_urdf.egg-info/SOURCES.txt'
+[0.998s] running build_ext
+[0.998s] Creating /home/kamil/dwornik_matysek/install/my_urdf/lib/python3.8/site-packages/site.py
+[1.000s] Creating /home/kamil/dwornik_matysek/install/my_urdf/lib/python3.8/site-packages/my-urdf.egg-link (link to .)
+[1.002s] 
+[1.002s] Installed /home/kamil/dwornik_matysek/build/my_urdf
+[1.002s] running install_data
+[1.002s] creating /home/kamil/dwornik_matysek/install/my_urdf/share/ament_index
+[1.002s] creating /home/kamil/dwornik_matysek/install/my_urdf/share/ament_index/resource_index
+[1.002s] creating /home/kamil/dwornik_matysek/install/my_urdf/share/ament_index/resource_index/packages
+[1.003s] copying resource/my_urdf -> /home/kamil/dwornik_matysek/install/my_urdf/share/ament_index/resource_index/packages
+[1.003s] copying package.xml -> /home/kamil/dwornik_matysek/install/my_urdf/share/my_urdf
+[1.043s] Invoked command in '/home/kamil/dwornik_matysek/build/my_urdf' returned '0': PYTHONPATH=/home/kamil/dwornik_matysek/install/my_urdf/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/kamil/dwornik_matysek/install/my_urdf --editable --build-directory /home/kamil/dwornik_matysek/build/my_urdf/build --no-deps install_data --install-dir /home/kamil/dwornik_matysek/install/my_urdf

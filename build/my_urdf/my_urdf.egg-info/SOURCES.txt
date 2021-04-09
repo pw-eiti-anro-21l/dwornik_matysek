@@ -1,0 +1,12 @@
+package.xml
+setup.cfg
+setup.py
+my_urdf/__init__.py
+my_urdf.egg-info/PKG-INFO
+my_urdf.egg-info/SOURCES.txt
+my_urdf.egg-info/dependency_links.txt
+my_urdf.egg-info/entry_points.txt
+my_urdf.egg-info/requires.txt
+my_urdf.egg-info/top_level.txt
+my_urdf.egg-info/zip-safe
+resource/my_urdf

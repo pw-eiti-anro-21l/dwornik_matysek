@@ -18,7 +18,7 @@ class StatePublisher(Node):
       self.broadcaster = TransformBroadcaster(self, qos=qos_profile)
       self.nodeName = self.get_name()
       self.get_logger().info("{0} started".format(self.nodeName))
-
+      #self.declare_parameter('dlugosc','1')
       degree = pi / 180.0
       loop_rate = self.create_rate(30)
 
@@ -46,6 +46,7 @@ class StatePublisher(Node):
               joint_state.header.stamp = now.to_msg()
               joint_state.name = ['base_to_second', 'second_to_third', 'linear_joint']
               joint_state.position = [swivel, tilt, height]
+              
 
               # update transform
               # (moving in a circle with radius=2)
@@ -63,7 +64,7 @@ class StatePublisher(Node):
               # Create new robot state
               tilt += tinc
               swivel += tinc2
-              if tilt < -1.9 or tilt > 1.9:
+              if tilt < -3 or tilt > 1:
                   tinc *= -1
               if swivel < -1.9 or swivel > 1.9:
                   tinc2 *= -1
