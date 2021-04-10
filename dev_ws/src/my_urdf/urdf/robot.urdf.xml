@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <robot name="origins">
+
   <material name="blue">
-    <color rgba="0 0 0.8 1">
+    <color rgba="0 0 0.8 1"/>
+  </material>
   <link name="base_link">
     <visual>
       <geometry>
@@ -16,42 +18,46 @@
       <geometry>
         <cylinder length="0.8" radius="0.1"/>
       </geometry>
-      <origin rpy="0 1.57075 0" xyz="0.4 0 0.3"/>
+      <origin rpy="0 1.57075 0" xyz="0.4 0 0"/>
     </visual>
   </link>
   
   <link name="third_link">
     <visual>
       <geometry>
-        <cylinder length="0.0.8" radius="0.1"/>
+        <cylinder length="0.8" radius="0.05"/>
       </geometry>
-      <origin rpy="0 1.57075 0" xyz="0.8 0 0.3" />
+      <origin rpy="0 1.57075 0" xyz="0.4 0 0" />
     </visual>
   </link>
+  
   <link name="end_link">
     <visual>
       <geometry>
-        <cylinder length="0.1" radius="0.05"/>
-        <origin rpy="0 0 0" xyz="1.2 0 0.25"/>
+        <cylinder length="0.2" radius="0.02" />
       </geometry>
+       <origin rpy="0 0 0" xyz="0 0 0" />
     </visual>
   </link>
 
-  <joint name="base_to_second" type="fixed">
+  <joint name="base_to_second" type="continuous">
     <parent link="base_link"/>
     <child link="second_link"/>
     <origin xyz="0 0 0.3"/>
+    <axis xyz="0 0 1"/>
   </joint>
-  <joint name="second_to_third" type="fixed">
+  <joint name="second_to_third" type="continuous">
     <parent link="second_link"/>
     <child link="third_link"/>
-    <origin rpy="0 -1.57075 0" xyz="0.8 0 0.3" />
+    <origin rpy="0 0 0" xyz="0.8 0 0" />
+    <axis xyz="0 0 1"/>
   </joint>
-  <joint name="linear_joint" type="fixed">
+  <joint name="linear_joint" type="prismatic">
     <parent link="third_link"/>
     <child link="end_link"/>
-    <origin rpy="0 -1.57075 0" xyz="1.2 0 0.3" />
+    <origin rpy="0 3.14 0" xyz="0.8 0 -0.05" />
+    <limit effort="1000.0" lower="0" upper="0.2" velocity="0.5"/>
+    <axis xyz="0 0 1"/>
   </joint>
 
 </robot>
-
