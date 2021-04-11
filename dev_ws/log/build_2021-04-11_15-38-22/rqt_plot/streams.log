@@ -1,0 +1,35 @@
+[0.013s] Invoking command in '/home/ceneusz/dwornik_matysek/dev_ws/build/rqt_plot': /usr/bin/cmake /home/ceneusz/dwornik_matysek/dev_ws/src/rqt_plot -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/ceneusz/dwornik_matysek/dev_ws/install/rqt_plot
+[0.560s] -- The C compiler identification is GNU 9.3.0
+[0.953s] -- The CXX compiler identification is GNU 9.3.0
+[0.968s] -- Check for working C compiler: /usr/bin/cc
+[1.050s] -- Check for working C compiler: /usr/bin/cc -- works
+[1.058s] -- Detecting C compiler ABI info
+[1.171s] -- Detecting C compiler ABI info - done
+[1.188s] -- Detecting C compile features
+[1.189s] -- Detecting C compile features - done
+[1.195s] -- Check for working CXX compiler: /usr/bin/c++
+[1.271s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[1.272s] -- Detecting CXX compiler ABI info
+[1.351s] -- Detecting CXX compiler ABI info - done
+[1.367s] -- Detecting CXX compile features
+[1.368s] -- Detecting CXX compile features - done
+[1.399s] CMake Error at CMakeLists.txt:4 (find_package):
+[1.399s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[1.399s]   asked CMake to find a package configuration file provided by "catkin", but
+[1.399s]   CMake did not find one.
+[1.399s] 
+[1.400s]   Could not find a package configuration file provided by "catkin" with any
+[1.400s]   of the following names:
+[1.400s] 
+[1.400s]     catkinConfig.cmake
+[1.400s]     catkin-config.cmake
+[1.400s] 
+[1.400s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[1.400s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[1.400s]   provides a separate development package or SDK, be sure it has been
+[1.401s]   installed.
+[1.401s] 
+[1.401s] 
+[1.401s] -- Configuring incomplete, errors occurred!
+[1.401s] See also "/home/ceneusz/dwornik_matysek/dev_ws/build/rqt_plot/CMakeFiles/CMakeOutput.log".
+[1.403s] Invoked command in '/home/ceneusz/dwornik_matysek/dev_ws/build/rqt_plot' returned '1': /usr/bin/cmake /home/ceneusz/dwornik_matysek/dev_ws/src/rqt_plot -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/ceneusz/dwornik_matysek/dev_ws/install/rqt_plot

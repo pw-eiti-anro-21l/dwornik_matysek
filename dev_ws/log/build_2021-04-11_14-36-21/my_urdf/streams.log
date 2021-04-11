@@ -1,0 +1,17 @@
+[0.227s] Invoking command in '/home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf': PYTHONPATH=/home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf --editable --build-directory /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build --no-deps install_data --install-dir /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf
+[0.437s] running develop
+[0.555s] running egg_info
+[0.555s] writing my_urdf.egg-info/PKG-INFO
+[0.556s] writing dependency_links to my_urdf.egg-info/dependency_links.txt
+[0.556s] writing entry points to my_urdf.egg-info/entry_points.txt
+[0.556s] writing requirements to my_urdf.egg-info/requires.txt
+[0.556s] writing top-level names to my_urdf.egg-info/top_level.txt
+[0.583s] reading manifest file 'my_urdf.egg-info/SOURCES.txt'
+[0.584s] writing manifest file 'my_urdf.egg-info/SOURCES.txt'
+[0.615s] running build_ext
+[0.615s] Creating /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my-urdf.egg-link (link to .)
+[0.616s] Installing state_publisher script to /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/my_urdf
+[0.616s] 
+[0.616s] Installed /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf
+[0.616s] running install_data
+[0.642s] Invoked command in '/home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf' returned '0': PYTHONPATH=/home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf --editable --build-directory /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build --no-deps install_data --install-dir /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf

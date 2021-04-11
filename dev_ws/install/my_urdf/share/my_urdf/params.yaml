@@ -1,0 +1,18 @@
+base_link:
+ rpy: "0 0 0"
+ xyz: "0 0 0"
+second_link:
+ rpy: "0 1.5707 0"
+ xyz: "0.4 0 0"
+third_link:
+ rpy: "0 1.5707 0"
+ xyz: "0.4 0 0"
+base_to_second:
+ rpy: "0 0 0"
+ xyz: "0 0 0"
+second_to_third:
+ rpy: "0 0 0"
+ xyz: "0.8 0 0"
+linear_joint:
+ rpy: "0 3.14 0"
+ xyz: "0.8 0 0"

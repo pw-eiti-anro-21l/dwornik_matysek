@@ -1,0 +1,54 @@
+base_link:
+ rpy:
+  r: 0
+  p: 0
+  y: 0
+ xyz:
+  x: 0
+  y: 0
+  z: 0
+second_link:
+ rpy:
+   r: 0
+   p: 1.5707
+   y: 0
+ xyz:
+   x: 0.4
+   y: 0
+   z: 0
+third_link:
+ rpy:
+   x: 0
+   y: 1.5707
+   z: 0
+ xyz:
+   x: 0.4
+   y: 0
+   z: 0
+base_to_second:
+ rpy:
+   r: 0
+   p: 0
+   y: 0
+ xyz:
+   x: 0
+   y: 0
+   z: 0
+second_to_third:
+ rpy:
+   r: 0
+   p: 0
+   y: 0
+ xyz:
+   x: 0.8
+   y: 0
+   z: 0
+linear_joint:
+ rpy:
+   r: 0
+   p: 3.14
+   y: 0
+ xyz:
+   x: 0.8
+   y: 0
+   z: 0

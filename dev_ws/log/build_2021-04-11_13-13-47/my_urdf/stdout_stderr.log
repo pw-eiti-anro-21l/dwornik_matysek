@@ -1,0 +1,40 @@
+running egg_info
+creating ../../build/my_urdf/my_urdf.egg-info
+writing ../../build/my_urdf/my_urdf.egg-info/PKG-INFO
+writing dependency_links to ../../build/my_urdf/my_urdf.egg-info/dependency_links.txt
+writing entry points to ../../build/my_urdf/my_urdf.egg-info/entry_points.txt
+writing requirements to ../../build/my_urdf/my_urdf.egg-info/requires.txt
+writing top-level names to ../../build/my_urdf/my_urdf.egg-info/top_level.txt
+writing manifest file '../../build/my_urdf/my_urdf.egg-info/SOURCES.txt'
+reading manifest file '../../build/my_urdf/my_urdf.egg-info/SOURCES.txt'
+writing manifest file '../../build/my_urdf/my_urdf.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build
+creating /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build/lib
+creating /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build/lib/my_urdf
+copying my_urdf/__init__.py -> /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build/lib/my_urdf
+copying my_urdf/state_publisher.py -> /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build/lib/my_urdf
+running install
+running install_lib
+creating /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my_urdf
+copying /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build/lib/my_urdf/__init__.py -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my_urdf
+copying /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build/lib/my_urdf/state_publisher.py -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my_urdf
+byte-compiling /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my_urdf/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my_urdf/state_publisher.py to state_publisher.cpython-38.pyc
+running install_data
+creating /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/ament_index
+creating /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/ament_index/resource_index
+creating /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/ament_index/resource_index/packages
+copying resource/my_urdf -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/ament_index/resource_index/packages
+copying package.xml -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+copying launch/demo.launch.py -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+copying launch/rviz.launch.py -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+copying urdf/robot.urdf.xml -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+copying urdf/param.yaml -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+copying urdf/robot.rviz -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+running install_egg_info
+Copying ../../build/my_urdf/my_urdf.egg-info to /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my_urdf-0.0.0-py3.8.egg-info
+running install_scripts
+Installing state_publisher script to /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/my_urdf
+writing list of installed files to '/home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/install.log'

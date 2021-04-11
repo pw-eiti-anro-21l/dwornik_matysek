@@ -1,0 +1,21 @@
+[0.244s] Invoking command in '/home/ceneusz/dwornik_matysek/dev_ws/build/rqt_plot': /usr/bin/cmake /home/ceneusz/dwornik_matysek/dev_ws/src/rqt_plot -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/ceneusz/dwornik_matysek/dev_ws/install/rqt_plot
+[0.475s] CMake Error at CMakeLists.txt:4 (find_package):
+[0.476s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[0.477s]   asked CMake to find a package configuration file provided by "catkin", but
+[0.478s]   CMake did not find one.
+[0.478s] 
+[0.479s]   Could not find a package configuration file provided by "catkin" with any
+[0.481s]   of the following names:
+[0.482s] 
+[0.483s]     catkinConfig.cmake
+[0.483s]     catkin-config.cmake
+[0.484s] 
+[0.485s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[0.485s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[0.485s]   provides a separate development package or SDK, be sure it has been
+[0.486s]   installed.
+[0.487s] 
+[0.488s] 
+[0.488s] -- Configuring incomplete, errors occurred!
+[0.489s] See also "/home/ceneusz/dwornik_matysek/dev_ws/build/rqt_plot/CMakeFiles/CMakeOutput.log".
+[0.491s] Invoked command in '/home/ceneusz/dwornik_matysek/dev_ws/build/rqt_plot' returned '1': /usr/bin/cmake /home/ceneusz/dwornik_matysek/dev_ws/src/rqt_plot -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/ceneusz/dwornik_matysek/dev_ws/install/rqt_plot

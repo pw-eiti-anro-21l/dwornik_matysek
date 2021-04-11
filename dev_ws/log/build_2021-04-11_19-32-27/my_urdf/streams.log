@@ -1,0 +1,20 @@
+[0.240s] Invoking command in '/home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf': PYTHONPATH=/home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf --editable --build-directory /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build --no-deps install_data --install-dir /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf
+[0.459s] running develop
+[0.583s] running egg_info
+[0.583s] writing my_urdf.egg-info/PKG-INFO
+[0.583s] writing dependency_links to my_urdf.egg-info/dependency_links.txt
+[0.584s] writing entry points to my_urdf.egg-info/entry_points.txt
+[0.584s] writing requirements to my_urdf.egg-info/requires.txt
+[0.584s] writing top-level names to my_urdf.egg-info/top_level.txt
+[0.612s] reading manifest file 'my_urdf.egg-info/SOURCES.txt'
+[0.616s] writing manifest file 'my_urdf.egg-info/SOURCES.txt'
+[0.659s] running build_ext
+[0.659s] Creating /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my-urdf.egg-link (link to .)
+[0.660s] Installing state_publisher script to /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/my_urdf
+[0.660s] 
+[0.660s] Installed /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf
+[0.661s] running install_data
+[0.661s] copying launch/demo.launch.py -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+[0.661s] copying urdf/robot.urdf.xacro.xml -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+[0.661s] copying urdf/params.yaml -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+[0.688s] Invoked command in '/home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf' returned '0': PYTHONPATH=/home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf --editable --build-directory /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build --no-deps install_data --install-dir /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf

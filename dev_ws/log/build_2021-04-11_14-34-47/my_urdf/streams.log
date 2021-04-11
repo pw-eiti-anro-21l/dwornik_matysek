@@ -1,0 +1,3 @@
+[0.443s] Invoking command in '/home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf': PYTHONPATH=/home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf --uninstall --editable --build-directory /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build
+[0.663s] running develop
+[0.782s] Removing /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my-urdf.egg-link (link to .)

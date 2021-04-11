@@ -1,0 +1,16 @@
+running develop
+running egg_info
+writing my_urdf.egg-info/PKG-INFO
+writing dependency_links to my_urdf.egg-info/dependency_links.txt
+writing entry points to my_urdf.egg-info/entry_points.txt
+writing requirements to my_urdf.egg-info/requires.txt
+writing top-level names to my_urdf.egg-info/top_level.txt
+reading manifest file 'my_urdf.egg-info/SOURCES.txt'
+writing manifest file 'my_urdf.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my-urdf.egg-link (link to .)
+Installing state_publisher script to /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/my_urdf
+
+Installed /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf
+running install_data
+copying urdf/robot.urdf.xacro.xml -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf

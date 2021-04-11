@@ -1,0 +1,19 @@
+[0.246s] Invoking command in '/home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf': PYTHONPATH=/home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf --editable --build-directory /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build --no-deps install_data --install-dir /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf
+[0.474s] running develop
+[0.599s] running egg_info
+[0.599s] writing my_urdf.egg-info/PKG-INFO
+[0.599s] writing dependency_links to my_urdf.egg-info/dependency_links.txt
+[0.599s] writing entry points to my_urdf.egg-info/entry_points.txt
+[0.599s] writing requirements to my_urdf.egg-info/requires.txt
+[0.599s] writing top-level names to my_urdf.egg-info/top_level.txt
+[0.628s] reading manifest file 'my_urdf.egg-info/SOURCES.txt'
+[0.629s] writing manifest file 'my_urdf.egg-info/SOURCES.txt'
+[0.663s] running build_ext
+[0.663s] Creating /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my-urdf.egg-link (link to .)
+[0.664s] Installing state_publisher script to /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/my_urdf
+[0.665s] 
+[0.665s] Installed /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf
+[0.665s] running install_data
+[0.665s] copying urdf/robot.urdf.xacro.xml -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+[0.665s] error: can't copy 'urdf/params.yaml': doesn't exist or not a regular file
+[0.690s] Invoked command in '/home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf' returned '1': PYTHONPATH=/home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf --editable --build-directory /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build --no-deps install_data --install-dir /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf

@@ -1,0 +1,2 @@
+Invoking command in '/home/ceneusz/dwornik_matysek/dev_ws/build/rqt_plot': /usr/bin/cmake /home/ceneusz/dwornik_matysek/dev_ws/src/rqt_plot -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/ceneusz/dwornik_matysek/dev_ws/install/rqt_plot
+Invoked command in '/home/ceneusz/dwornik_matysek/dev_ws/build/rqt_plot' returned '1': /usr/bin/cmake /home/ceneusz/dwornik_matysek/dev_ws/src/rqt_plot -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/ceneusz/dwornik_matysek/dev_ws/install/rqt_plot

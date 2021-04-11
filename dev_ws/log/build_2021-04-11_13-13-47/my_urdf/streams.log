@@ -1,0 +1,41 @@
+[0.446s] Invoking command in '/home/ceneusz/dwornik_matysek/dev_ws/src/my_urdf': PYTHONPATH=/home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/my_urdf build --build-base /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build install --prefix /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf --record /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/install.log --single-version-externally-managed
+[0.659s] running egg_info
+[0.660s] creating ../../build/my_urdf/my_urdf.egg-info
+[0.660s] writing ../../build/my_urdf/my_urdf.egg-info/PKG-INFO
+[0.660s] writing dependency_links to ../../build/my_urdf/my_urdf.egg-info/dependency_links.txt
+[0.661s] writing entry points to ../../build/my_urdf/my_urdf.egg-info/entry_points.txt
+[0.661s] writing requirements to ../../build/my_urdf/my_urdf.egg-info/requires.txt
+[0.661s] writing top-level names to ../../build/my_urdf/my_urdf.egg-info/top_level.txt
+[0.664s] writing manifest file '../../build/my_urdf/my_urdf.egg-info/SOURCES.txt'
+[0.700s] reading manifest file '../../build/my_urdf/my_urdf.egg-info/SOURCES.txt'
+[0.701s] writing manifest file '../../build/my_urdf/my_urdf.egg-info/SOURCES.txt'
+[0.701s] running build
+[0.702s] running build_py
+[0.702s] creating /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build
+[0.702s] creating /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build/lib
+[0.702s] creating /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build/lib/my_urdf
+[0.702s] copying my_urdf/__init__.py -> /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build/lib/my_urdf
+[0.702s] copying my_urdf/state_publisher.py -> /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build/lib/my_urdf
+[0.702s] running install
+[0.705s] running install_lib
+[0.708s] creating /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my_urdf
+[0.708s] copying /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build/lib/my_urdf/__init__.py -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my_urdf
+[0.709s] copying /home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/build/lib/my_urdf/state_publisher.py -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my_urdf
+[0.709s] byte-compiling /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my_urdf/__init__.py to __init__.cpython-38.pyc
+[0.711s] byte-compiling /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my_urdf/state_publisher.py to state_publisher.cpython-38.pyc
+[0.712s] running install_data
+[0.713s] creating /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/ament_index
+[0.713s] creating /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/ament_index/resource_index
+[0.714s] creating /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/ament_index/resource_index/packages
+[0.714s] copying resource/my_urdf -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/ament_index/resource_index/packages
+[0.714s] copying package.xml -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+[0.714s] copying launch/demo.launch.py -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+[0.715s] copying launch/rviz.launch.py -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+[0.715s] copying urdf/robot.urdf.xml -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+[0.715s] copying urdf/param.yaml -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+[0.715s] copying urdf/robot.rviz -> /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/share/my_urdf
+[0.715s] running install_egg_info
+[0.718s] Copying ../../build/my_urdf/my_urdf.egg-info to /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/python3.8/site-packages/my_urdf-0.0.0-py3.8.egg-info
+[0.719s] running install_scripts
+[0.746s] Installing state_publisher script to /home/ceneusz/dwornik_matysek/dev_ws/install/my_urdf/lib/my_urdf
+[0.746s] writing list of installed files to '/home/ceneusz/dwornik_matysek/dev_ws/build/my_urdf/install.log'
