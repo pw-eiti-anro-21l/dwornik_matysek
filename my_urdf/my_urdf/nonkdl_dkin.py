@@ -31,25 +31,17 @@ class nonkdl_dkin(Node):
     self.subscription
 
   def listener_callback(self, msg):
-    self.get_logger().info('I heard: "%s"' % msg.position[0])
+    self.get_logger().info('I heard: "%s"' % msg.position[2])
     self.publisher_ = self.create_publisher(PoseStamped, '/pose_stamped_nonkdl', 10)
-    msg = PoseStamped()
-    msg.header.stamp = ROSClock().now().to_msg()
-    msg.header.frame_id = "base_link"
-    msg.pose.position.x=2.0
-    msg.pose.position.y=2.0
-    msg.pose.position.z=2.0
-    msg.pose.orientation = euler_to_quaternion(0,pi,0)
-    self.publisher_.publish(msg)
+    pose = PoseStamped()
+    pose.header.stamp = ROSClock().now().to_msg()
+    pose.header.frame_id = "base_link"
+    pose.pose.position.x=2.0
+    pose.pose.position.y=2.0
+    pose.pose.position.z=2.0-msg.position[2]
+    pose.pose.orientation = euler_to_quaternion(0,pi,0)
+    self.publisher_.publish(pose)
     
-  
-  def timer_callback(self):
-    msg = PoseStamped()
-    msg.pose.position.x=1.0
-    msg.pose.position.y=1.0
-    msg.pose.position.z=1.0
-    self.publisher_.publish(msg)
-  
 def main(args=None):
   rclpy.init(args=args)
   node = nonkdl_dkin()
