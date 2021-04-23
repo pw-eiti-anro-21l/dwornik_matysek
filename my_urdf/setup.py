@@ -26,7 +26,8 @@ setup(
     entry_points={
         'console_scripts': [
             'state_publisher = my_urdf.state_publisher:main',
-            'nonkdl_dkin = my_urdf.nonkdl_dkin:main'
+            'nonkdl_dkin = my_urdf.nonkdl_dkin:main',
+            'kdl_dkin = my_urdf.kdl_dkin:main'
         ],
     },
 )
