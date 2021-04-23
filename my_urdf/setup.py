@@ -14,7 +14,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name), glob('launch/*.py')),
- 	    (os.path.join('share', package_name), glob('urdf/*'))
+ 	 (os.path.join('share', package_name), glob('urdf/*'))
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -25,7 +25,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'state_publisher = my_urdf.state_publisher:main'
+            'state_publisher = my_urdf.state_publisher:main',
+            'nonkdl_dkin = my_urdf.nonkdl_dkin:main'
         ],
     },
 )

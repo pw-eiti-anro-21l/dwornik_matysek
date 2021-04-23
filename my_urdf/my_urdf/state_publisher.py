@@ -18,7 +18,6 @@ class StatePublisher(Node):
       self.broadcaster = TransformBroadcaster(self, qos=qos_profile)
       self.nodeName = self.get_name()
       self.get_logger().info("{0} started".format(self.nodeName))
-      #self.declare_parameter('dlugosc','1')
       degree = pi / 180.0
       loop_rate = self.create_rate(30)
 
@@ -26,7 +25,6 @@ class StatePublisher(Node):
       swivel2 = 0.
       tinc = degree
       swivel = 0.
-      angle = 0.
       height = 0.
       hinc = 0.005
       tinc2 =tinc/2
@@ -65,7 +63,6 @@ class StatePublisher(Node):
               height += hinc
               if height > 0.2 or height < 0.0:
                   hinc *= -1
-              angle += degree/4
 
               # This will adjust as needed per iteration
               loop_rate.sleep()
