@@ -44,5 +44,9 @@ def generate_launch_description():
         Node(
             package='joint_state_publisher_gui',
             executable='joint_state_publisher_gui',
-            name='joint_state_publisher_gui')
+            name='joint_state_publisher_gui'),
+        Node(
+          package='my_urdf',
+          executable='kdl_dkin',
+          name='kdl_dkin'),
     ])

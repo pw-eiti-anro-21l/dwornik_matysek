@@ -39,4 +39,8 @@ def generate_launch_description():
           package='my_urdf',
           executable='nonkdl_dkin',
           name='nonkdl_dkin'),
+       Node(
+          package='my_urdf',
+          executable='kdl_dkin',
+          name='kdl_dkin'),
   ])

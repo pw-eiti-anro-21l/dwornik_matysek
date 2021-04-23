@@ -1,6 +1,5 @@
 from math import sin, cos, pi
 import yaml
-import glob
 import os
 import rclpy
 from rclpy.node import Node
@@ -10,7 +9,6 @@ from geometry_msgs.msg import Quaternion
 from sensor_msgs.msg import JointState
 from geometry_msgs.msg import PoseStamped
 from tf2_ros import TransformBroadcaster, TransformStamped
-import json
 from rclpy.clock import ROSClock
 
 def euler_to_quaternion(roll, pitch, yaw):
@@ -38,7 +36,6 @@ class nonkdl_dkin(Node):
         self.secondlink = self.param.get("secondlink")
       except:
         pass
-    self.subscription
 
 
 
