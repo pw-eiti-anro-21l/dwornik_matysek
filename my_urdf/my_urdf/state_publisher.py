@@ -44,7 +44,6 @@ class StatePublisher(Node):
               joint_state.header.stamp = now.to_msg()
               joint_state.name = ['base_to_second', 'second_to_third', 'linear_joint']
               joint_state.position = [swivel, swivel2, height]
-              
 
               # update transform
               odom_trans.header.stamp = now.to_msg()
@@ -61,7 +60,7 @@ class StatePublisher(Node):
               if swivel < -1.9 or swivel > 1.9:
                   tinc2 *= -1
               height += hinc
-              if height > 0.2 or height < 0.0:
+              if height > 0.1 or height < 0.0:
                   hinc *= -1
 
               # This will adjust as needed per iteration

@@ -1,4 +1,6 @@
 from math import sin, cos, pi
+import yaml
+import glob
 import os
 import rclpy
 from rclpy.node import Node
@@ -28,18 +30,28 @@ class nonkdl_dkin(Node):
       'joint_states',
       self.listener_callback,
       10)
+    yaml_file = os.path.join(get_package_share_directory('my_urdf'), "param.yaml")
+    with open(yaml_file,'r') as stream:
+      try:
+        self.param = yaml.load(stream,Loader=yaml.FullLoader)
+        self.firstlink = self.param.get("firstlink")
+        self.secondlink = self.param.get("secondlink")
+      except:
+        pass
     self.subscription
 
+
+
   def listener_callback(self, msg):
-    self.get_logger().info('I heard: "%s"' % msg.position[2])
+    #self.get_logger().info('I heard: "%s"' % msg.position[0])
     self.publisher_ = self.create_publisher(PoseStamped, '/pose_stamped_nonkdl', 10)
     pose = PoseStamped()
     pose.header.stamp = ROSClock().now().to_msg()
     pose.header.frame_id = "base_link"
-    pose.pose.position.x=2.0
-    pose.pose.position.y=2.0
-    pose.pose.position.z=2.0-msg.position[2]
-    pose.pose.orientation = euler_to_quaternion(0,pi,0)
+    pose.pose.position.x=self.firstlink*cos(msg.position[0])+self.secondlink*cos(msg.position[1]+msg.position[0])
+    pose.pose.position.y=self.firstlink*sin(msg.position[0])+self.secondlink*sin(msg.position[1]+msg.position[0])
+    pose.pose.position.z=0.25-msg.position[2]
+    pose.pose.orientation = euler_to_quaternion(0, pi ,msg.position[0]+msg.position[1])
     self.publisher_.publish(pose)
     
 def main(args=None):
