@@ -121,8 +121,8 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Alpha: 1
-      Axes Length: 0.20000000298023224
-      Axes Radius: 0.05000000074505806
+      Axes Length: 0.100000000298023224
+      Axes Radius: 0.04000000074505806
       Class: rviz_default_plugins/Pose
       Color: 255; 25; 0
       Enabled: true
@@ -140,8 +140,8 @@ Visualization Manager:
         Value: /pose_stamped_nonkdl
       Value: true
     - Alpha: 1
-      Axes Length: 0.20000000298023224
-      Axes Radius: 0.05000000074505806
+      Axes Length: 0.30000000298023224
+      Axes Radius: 0.01000000074505806
       Class: rviz_default_plugins/Pose
       Color: 255; 25; 0
       Enabled: true
