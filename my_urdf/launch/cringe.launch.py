@@ -35,13 +35,6 @@ def generate_launch_description():
                 'robot_description': Command(['xacro', ' ', urdf])
             }]),
         Node(
-            package='rviz2',
-            executable='rviz2',
-            name='rviz2',
-            output='screen',
-            parameters=[{'use_sim_time': use_sim_time}],
-            arguments=['-d', rviz]),
-        Node(
             package='joint_state_publisher_gui',
             executable='joint_state_publisher_gui',
             name='joint_state_publisher_gui'),
@@ -49,4 +42,8 @@ def generate_launch_description():
           package='my_urdf',
           executable='kdl_dkin',
           name='kdl_dkin'),
+        Node(
+          package='my_urdf',
+          executable='nonkdl_dkin',
+          name='nonkdl_dkin'),
     ])

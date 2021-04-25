@@ -31,11 +31,6 @@ def generate_launch_description():
             }]),
       Node(
           package='my_urdf',
-          executable='state_publisher',
-          name='state_publisher',
-          output='screen'),
-      Node(
-          package='my_urdf',
           executable='nonkdl_dkin',
           name='nonkdl_dkin'),
   ])

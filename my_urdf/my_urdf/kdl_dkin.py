@@ -34,8 +34,6 @@ class Kdl_dkin(Node):
 
     def listener_callback(self, msg):
 
-        #Kinematic chain
-
         chain = Chain()
         base_link__link_1 = Joint(Joint.RotZ)
         frame1 = Frame(Rotation.RPY(0,0,0), Vector(self.firstlink,0,0.3))
@@ -55,23 +53,20 @@ class Kdl_dkin(Node):
         chain.addSegment(segment3)
 
 
-        #Forward kinematics
 
         joint_positions=JntArray(3)
         joint_positions[0]= msg.position[0]
         joint_positions[1]= msg.position[1]
         joint_positions[2]= -msg.position[2]
 
-        # Rekursywny solver kinematyki prostej
-
         fk=ChainFkSolverPos_recursive(chain)
         finalFrame=Frame()
         fk.JntToCart(joint_positions,finalFrame)
 
-        # Rotational Matrix of the final Frame:
+
         qua = finalFrame.M.GetQuaternion()
 
-        # End-effector position + effector offset in respect to last joint (joint3):
+        
         tool_offset = Vector(0.0, 0, 0)
         xyz = finalFrame.p + tool_offset
 

@@ -22,7 +22,7 @@
       <origin rpy="0 1.57075 0" xyz="${param['firstlink']/2} 0 0"/>
     </visual>
   </link>
-  
+
   <link name="third_link">
     <visual>
       <geometry>
@@ -31,7 +31,7 @@
       <origin rpy="0 1.57075 0" xyz="${param['secondlink']/2} 0 0" />
     </visual>
   </link>
-  
+
   <link name="end_link">
     <visual>
       <geometry>
@@ -47,7 +47,8 @@
     <origin xyz="0 0 0.3"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="second_to_third" type="continuous">
+  <joint name="second_to_third" type="revolute">
+    <limit effort="1000.0" lower="-0.85" upper="0.85" velocity="0.5"/>
     <parent link="second_link"/>
     <child link="third_link"/>
     <origin rpy="0 0 0" xyz="${param['firstlink']} 0 0" />
