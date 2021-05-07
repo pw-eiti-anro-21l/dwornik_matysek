@@ -40,7 +40,6 @@ class nonkdl_dkin(Node):
 
 
   def listener_callback(self, msg):
-    #self.get_logger().info('I heard: "%s"' % msg.position[0])
     self.publisher_ = self.create_publisher(PoseStamped, '/pose_stamped_nonkdl', 10)
     pose = PoseStamped()
     pose.header.stamp = ROSClock().now().to_msg()

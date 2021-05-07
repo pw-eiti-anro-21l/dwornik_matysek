@@ -70,11 +70,8 @@ class Kdl_dkin(Node):
         tool_offset = Vector(0.0, 0, 0)
         xyz = finalFrame.p + tool_offset
 
-
-
         qos_profile = QoSProfile(depth=10)
         pose_publisher = self.create_publisher(PoseStamped, '/pose_stamped_kdl', qos_profile)
-
 
         poses = PoseStamped()
         poses.header.stamp = ROSClock().now().to_msg()
