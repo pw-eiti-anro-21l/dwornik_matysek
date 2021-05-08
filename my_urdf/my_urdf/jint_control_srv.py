@@ -97,13 +97,13 @@ class MinimalService(Node):
 
         # każdy ze stawów będzie poruszać się zgodnie z równaniem
         # y = a*x^3 + b*x^2 + c*x + d
-        a_1 = -(request.joint1-position[0])/(total_time**3)
-        a_2 = -(request.joint2-position[1])/(total_time**3)
-        a_3 = -(request.joint3-position[2])/(total_time**3)
+        a_1 = -2*(request.joint1-position[0])/(total_time**3)
+        a_2 = -2*(request.joint2-position[1])/(total_time**3)
+        a_3 = -2*(request.joint3-position[2])/(total_time**3)
 
-        b_1 = 1.5*(request.joint1-position[0])/(total_time**2)
-        b_2 = 1.5*(request.joint2-position[1])/(total_time**2)
-        b_3 = 1.5*(request.joint3-position[2])/(total_time**2)
+        b_1 = 3*(request.joint1-position[0])/(total_time**2)
+        b_2 = 3*(request.joint2-position[1])/(total_time**2)
+        b_3 = 3*(request.joint3-position[2])/(total_time**2)
 
         c_1 = 0
         c_2 = 0
@@ -112,6 +112,11 @@ class MinimalService(Node):
         d_1 = position[0]
         d_2 = position[1]
         d_3 = position[2]
+
+        markerArray = MarkerArray()
+        qos_profile1 = QoSProfile(depth=10)
+
+        self.marker_pub = self.create_publisher(MarkerArray, '/marker_pose', qos_profile1)
 
         while (i<steps):
             joint_state = JointState()
@@ -126,6 +131,26 @@ class MinimalService(Node):
             self.joint_pub.publish(joint_state)
             time.sleep(sample_time)
 
+
+
+            marker = Marker()
+            marker.header.frame_id = "/base_link"
+            marker.type = marker.SPHERE
+            marker.action = marker.ADD
+            marker.scale.x = 0.02
+            marker.scale.y = 0.02
+            marker.scale.z = 0.02
+            marker.color.a = 1.0
+            marker.color.r = 1.0
+            marker.color.g = 1.0
+            marker.color.b = 0.0
+            marker.pose.orientation.w = 1.0
+            marker.pose.position.x = self.firstlink*cos(position[0])+self.secondlink*cos(position[1]+position[0])
+            marker.pose.position.y = self.firstlink*sin(position[0])+self.secondlink*sin(position[1]+position[0])
+            marker.pose.position.z = 0.25-position[2]
+            marker.id=i
+            markerArray.markers.append(marker)
+            self.marker_pub.publish(markerArray)
 
 
 def main(args=None):
