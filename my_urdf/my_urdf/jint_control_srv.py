@@ -14,7 +14,7 @@ from visualization_msgs.msg import Marker
 from visualization_msgs.msg import MarkerArray
 from tutorial_interfaces.srv import Interpolation
 import time
-import math 
+import math
 
 class MinimalService(Node):
 
@@ -32,6 +32,12 @@ class MinimalService(Node):
 
     def interpolacja(self, request, response):
       #  self.get_logger().info('Incoming request\na: %d b: %d' % (request.a, request.b))
+        self.interpolacja_nieliniowa(request)
+
+        response.response = "sukces!"
+        return response
+
+    def interpolacja_liniowa(self, request):
         qos_profile = QoSProfile(depth=10)
         self.joint_pub = self.create_publisher(JointState, 'joint_states', qos_profile)
         sample_time = 0.1
@@ -80,8 +86,46 @@ class MinimalService(Node):
             markerArray.markers.append(marker)
             self.marker_pub.publish(markerArray)
 
-        response.response = "sukces!"
-        return response
+    def interpolacja_nieliniowa(self,request):
+        qos_profile = QoSProfile(depth=10)
+        self.joint_pub = self.create_publisher(JointState, 'joint_states', qos_profile)
+        sample_time = 0.1
+        total_time = request.time
+        steps = round(total_time/sample_time)
+        i=0
+        position=[0.0,0.0,0.0]
+
+        # każdy ze stawów będzie poruszać się zgodnie z równaniem
+        # y = a*x^3 + b*x^2 + c*x + d
+        a_1 = -(request.joint1-position[0])/(total_time**3)
+        a_2 = -(request.joint2-position[1])/(total_time**3)
+        a_3 = -(request.joint3-position[2])/(total_time**3)
+
+        b_1 = 1.5*(request.joint1-position[0])/(total_time**2)
+        b_2 = 1.5*(request.joint2-position[1])/(total_time**2)
+        b_3 = 1.5*(request.joint3-position[2])/(total_time**2)
+
+        c_1 = 0
+        c_2 = 0
+        c_3 = 0
+
+        d_1 = position[0]
+        d_2 = position[1]
+        d_3 = position[2]
+
+        while (i<steps):
+            joint_state = JointState()
+            i+=1
+            now = self.get_clock().now()
+            joint_state.header.stamp = now.to_msg()
+            joint_state.name = ['base_to_second', 'second_to_third', 'linear_joint']
+            position[1] = a_1*(i*sample_time)**3 + b_1*(i*sample_time)**2 + c_1*(i*sample_time) + d_1
+            position[0] = a_2*(i*sample_time)**3 + b_2*(i*sample_time)**2 + c_2*(i*sample_time) + d_2
+            position[2] = a_3*(i*sample_time)**3 + b_3*(i*sample_time)**2 + c_3*(i*sample_time) + d_3
+            joint_state.position = position
+            self.joint_pub.publish(joint_state)
+            time.sleep(sample_time)
+
 
 
 def main(args=None):
