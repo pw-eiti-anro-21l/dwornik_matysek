@@ -32,7 +32,10 @@ class MinimalService(Node):
 
     def interpolacja(self, request, response):
       #  self.get_logger().info('Incoming request\na: %d b: %d' % (request.a, request.b))
-        self.interpolacja_nieliniowa(request)
+        if(request.method == 0):
+            self.interpolacja_liniowa(request)
+        if(request.method == 1):
+            self.interpolacja_nieliniowa(request)
 
         response.response = "sukces!"
         return response
@@ -124,8 +127,8 @@ class MinimalService(Node):
             now = self.get_clock().now()
             joint_state.header.stamp = now.to_msg()
             joint_state.name = ['base_to_second', 'second_to_third', 'linear_joint']
-            position[1] = a_1*(i*sample_time)**3 + b_1*(i*sample_time)**2 + c_1*(i*sample_time) + d_1
-            position[0] = a_2*(i*sample_time)**3 + b_2*(i*sample_time)**2 + c_2*(i*sample_time) + d_2
+            position[0] = a_1*(i*sample_time)**3 + b_1*(i*sample_time)**2 + c_1*(i*sample_time) + d_1
+            position[1] = a_2*(i*sample_time)**3 + b_2*(i*sample_time)**2 + c_2*(i*sample_time) + d_2
             position[2] = a_3*(i*sample_time)**3 + b_3*(i*sample_time)**2 + c_3*(i*sample_time) + d_3
             joint_state.position = position
             self.joint_pub.publish(joint_state)

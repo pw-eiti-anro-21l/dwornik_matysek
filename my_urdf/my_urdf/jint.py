@@ -15,13 +15,13 @@ class MinimalClientAsync(Node):
     def send_request(self):
         try:
             if(float(sys.argv[1])>3.14 or float(sys.argv[1]) < -3.14):
-                self.get_logger().info('Niepoprawna wartość położenia stawu 1.') 
+                self.get_logger().info('Niepoprawna wartość położenia stawu 1.')
                 raise ValueError()
             else:
                 self.req.joint1 = float(sys.argv[1])
 
             if(float(sys.argv[2])>0.85 or float(sys.argv[2]) < -0.85):
-                self.get_logger().info('Niepoprawna wartość położenia stawu 2.')                
+                self.get_logger().info('Niepoprawna wartość położenia stawu 2.')
                 raise ValueError()
             else:
                 self.req.joint2= float(sys.argv[2])
@@ -37,6 +37,7 @@ class MinimalClientAsync(Node):
                 raise ValueError()
             else:
                 self.req.time = float(sys.argv[4])
+            self.req.method = int(sys.argv[5])
         except ValueError:
             raise Exception()
 
