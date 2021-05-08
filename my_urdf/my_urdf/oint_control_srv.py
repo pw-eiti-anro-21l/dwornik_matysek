@@ -22,6 +22,10 @@ def euler_to_quaternion(roll, pitch, yaw):
     qz = cos(roll/2) * cos(pitch/2) * sin(yaw/2) - sin(roll/2) * sin(pitch/2) * cos(yaw/2)
     qw = cos(roll/2) * cos(pitch/2) * cos(yaw/2) + sin(roll/2) * sin(pitch/2) * sin(yaw/2)
     return Quaternion(x=qx, y=qy, z=qz, w=qw)
+def fun(x, x0, x1, y0, y1):
+    iloraz = (x-x0)/(x1-x0)
+    ret = (1-iloraz)*y0 + iloraz *y1 +iloraz*(1-iloraz)*((1-iloraz)*(-y1+y0) + iloraz*(y1-y0))  
+    return ret
 
 class MinimalService(Node):
 
@@ -54,17 +58,23 @@ class MinimalService(Node):
         self.publisher_ = self.create_publisher(PoseStamped, '/pose_stamped_lab4', 10)
         pose = PoseStamped()
 
-
         while (i<steps):
             i+=1
             pose.header.stamp = ROSClock().now().to_msg()
             pose.header.frame_id = "base_link"
-            position[0] = position[0]+ a
-            position[1] = position[1]+ b
-            position[2] = position[2]+ c
+            # position[0] = position[0]+ a
+            # position[1] = position[1]+ b
+            # position[2] = position[2]+ c
+            # position[3] = position[3]+ d
+            # position[4] = position[4]+ e
+            # position[5] = position[5]+ f
+            position[0] = fun(i,0,steps,0,request.x)
+            position[1] = fun(i,0,steps,0,request.y)
+            position[2] = fun(i,0,steps,0,request.z)
             position[3] = position[3]+ d
             position[4] = position[4]+ e
             position[5] = position[5]+ f
+            
             pose.pose.position.x = position[0]
             pose.pose.position.y = position[1]
             pose.pose.position.z = position[2]
