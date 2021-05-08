@@ -30,6 +30,8 @@ setup(
             'kdl_dkin = my_urdf.kdl_dkin:main',
             'service = my_urdf.jint_control_srv:main',
             'client = my_urdf.jint:main',
+            'service2 = my_urdf.oint_control_srv:main',
+            'client2 = my_urdf.oint:main',
         ],
     },
 )
