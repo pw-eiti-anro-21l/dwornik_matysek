@@ -194,6 +194,8 @@ class MinimalService(Node):
             marker.id=i
             markerArray.markers.append(marker)
             self.marker_pub.publish(markerArray)
+            
+            time.sleep(sample_time)
 
 def main(args=None):
     rclpy.init(args=args)
