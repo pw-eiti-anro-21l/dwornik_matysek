@@ -21,6 +21,7 @@ class MinimalClientAsync2(Node):
         self.req.pitch= float(sys.argv[5])
         self.req.yaw = float(sys.argv[6])
         self.req.time = float(sys.argv[7])
+        self.req.method = int(sys.argv[8])
 
         self.future = self.cli.call_async(self.req)
 
