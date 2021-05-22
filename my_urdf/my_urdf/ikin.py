@@ -67,6 +67,8 @@ class Ikin(Node):
                 sigma_1 = asin(s_1)
                 self.joint_state.position = [sigma_1, sigma_2, 0.4-self.z]
                 print(self.joint_state.position)
+                now = self.get_clock().now()
+                self.joint_state.header.stamp = now.to_msg()
                 self.publisher.publish(self.joint_state)
 
 
