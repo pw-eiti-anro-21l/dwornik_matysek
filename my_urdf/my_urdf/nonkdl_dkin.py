@@ -11,53 +11,65 @@ from geometry_msgs.msg import PoseStamped
 from tf2_ros import TransformBroadcaster, TransformStamped
 from rclpy.clock import ROSClock
 
+
 def euler_to_quaternion(roll, pitch, yaw):
-    qx = sin(roll/2) * cos(pitch/2) * cos(yaw/2) - cos(roll/2) * sin(pitch/2) * sin(yaw/2)
-    qy = cos(roll/2) * sin(pitch/2) * cos(yaw/2) + sin(roll/2) * cos(pitch/2) * sin(yaw/2)
-    qz = cos(roll/2) * cos(pitch/2) * sin(yaw/2) - sin(roll/2) * sin(pitch/2) * cos(yaw/2)
-    qw = cos(roll/2) * cos(pitch/2) * cos(yaw/2) + sin(roll/2) * sin(pitch/2) * sin(yaw/2)
+    qx = sin(roll / 2) * cos(pitch / 2) * cos(yaw / 2) - \
+        cos(roll / 2) * sin(pitch / 2) * sin(yaw / 2)
+    qy = cos(roll / 2) * sin(pitch / 2) * cos(yaw / 2) + \
+        sin(roll / 2) * cos(pitch / 2) * sin(yaw / 2)
+    qz = cos(roll / 2) * cos(pitch / 2) * sin(yaw / 2) - \
+        sin(roll / 2) * sin(pitch / 2) * cos(yaw / 2)
+    qw = cos(roll / 2) * cos(pitch / 2) * cos(yaw / 2) + \
+        sin(roll / 2) * sin(pitch / 2) * sin(yaw / 2)
     return Quaternion(x=qx, y=qy, z=qz, w=qw)
+
 
 class nonkdl_dkin(Node):
 
-  def __init__(self):
-    super().__init__('nonkdl_dkin')
-    
-    self.subscription = self.create_subscription(
-      JointState,
-      'joint_states',
-      self.listener_callback,
-      10)
-    yaml_file = os.path.join(get_package_share_directory('my_urdf'), "param.yaml")
-    with open(yaml_file,'r') as stream:
-      try:
-        self.param = yaml.load(stream,Loader=yaml.FullLoader)
-        self.firstlink = self.param.get("firstlink")
-        self.secondlink = self.param.get("secondlink")
-      except:
-        pass
+    def __init__(self):
+        super().__init__('nonkdl_dkin')
+
+        self.subscription = self.create_subscription(
+            JointState,
+            'joint_states',
+            self.listener_callback,
+            10)
+        yaml_file = os.path.join(
+            get_package_share_directory('my_urdf'), "param.yaml")
+        with open(yaml_file, 'r') as stream:
+            try:
+                self.param = yaml.load(stream, Loader=yaml.FullLoader)
+                self.firstlink = self.param.get("firstlink")
+                self.secondlink = self.param.get("secondlink")
+            except:
+                pass
+
+    def listener_callback(self, msg):
+        self.publisher_ = self.create_publisher(
+            PoseStamped, '/pose_stamped_nonkdl', 10)
+        pose = PoseStamped()
+        pose.header.stamp = ROSClock().now().to_msg()
+        pose.header.frame_id = "base_link"
+        pose.pose.position.x = self.firstlink * \
+            cos(msg.position[0]) + self.secondlink * \
+            cos(msg.position[1] + msg.position[0])
+        pose.pose.position.y = self.firstlink * \
+            sin(msg.position[0]) + self.secondlink * \
+            sin(msg.position[1] + msg.position[0])
+        pose.pose.position.z = 0.25 - msg.position[2]
+        pose.pose.orientation = euler_to_quaternion(
+            0, pi, msg.position[0] + msg.position[1])
+        self.publisher_.publish(pose)
 
 
-
-  def listener_callback(self, msg):
-    self.publisher_ = self.create_publisher(PoseStamped, '/pose_stamped_nonkdl', 10)
-    pose = PoseStamped()
-    pose.header.stamp = ROSClock().now().to_msg()
-    pose.header.frame_id = "base_link"
-    pose.pose.position.x=self.firstlink*cos(msg.position[0])+self.secondlink*cos(msg.position[1]+msg.position[0])
-    pose.pose.position.y=self.firstlink*sin(msg.position[0])+self.secondlink*sin(msg.position[1]+msg.position[0])
-    pose.pose.position.z=0.25-msg.position[2]
-    pose.pose.orientation = euler_to_quaternion(0, pi ,msg.position[0]+msg.position[1])
-    self.publisher_.publish(pose)
-    
 def main(args=None):
-  rclpy.init(args=args)
-  node = nonkdl_dkin()
-  rclpy.spin(node)
+    rclpy.init(args=args)
+    node = nonkdl_dkin()
+    rclpy.spin(node)
 
-  node.destroy_node()
-  rclpy.shutdown()
+    node.destroy_node()
+    rclpy.shutdown()
 
 
 if __name__ == '__main__':
-  main()
+    main()

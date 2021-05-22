@@ -8,6 +8,7 @@ from ament_index_python.packages import get_package_share_directory
 from geometry_msgs.msg import Quaternion
 from sensor_msgs.msg import JointState
 from geometry_msgs.msg import PoseStamped
+from std_msgs.msg import Float64MultiArray
 from rclpy.clock import ROSClock
 from sensor_msgs.msg import JointState
 from visualization_msgs.msg import Marker
@@ -16,15 +17,18 @@ from tutorial_interfaces.srv import Interpolation
 import time
 import math
 
+
 class MinimalService(Node):
 
     def __init__(self):
         super().__init__('minimal_service')
-        self.srv = self.create_service(Interpolation, 'interpolacja', self.interpolacja)
-        yaml_file = os.path.join(get_package_share_directory('my_urdf'), "param.yaml")
-        with open(yaml_file,'r') as stream:
+        self.srv = self.create_service(
+            Interpolation, 'interpolacja', self.interpolacja)
+        yaml_file = os.path.join(
+            get_package_share_directory('my_urdf'), "param.yaml")
+        with open(yaml_file, 'r') as stream:
             try:
-                self.param = yaml.load(stream,Loader=yaml.FullLoader)
+                self.param = yaml.load(stream, Loader=yaml.FullLoader)
                 self.firstlink = self.param.get("firstlink")
                 self.secondlink = self.param.get("secondlink")
             except:
@@ -42,33 +46,39 @@ class MinimalService(Node):
 
     def interpolacja_liniowa(self, request):
         qos_profile = QoSProfile(depth=10)
-        self.joint_pub = self.create_publisher(JointState, 'joint_states', qos_profile)
+        self.joint_pub = self.create_publisher(
+            JointState, 'joint_states', qos_profile)
         sample_time = 0.1
         total_time = request.time
-        steps = round(total_time/sample_time)
-        i=0
-        position=[0.0,0.0,0.0]
-        a = ((request.joint1)*sample_time)/total_time
-        b = ((request.joint2)*sample_time)/total_time
-        c = ((request.joint3)*sample_time)/total_time
+        steps = round(total_time / sample_time)
+        i = 0
+        position = [0.0, 0.0, 0.0]
+        a = ((request.joint1) * sample_time) / total_time
+        b = ((request.joint2) * sample_time) / total_time
+        c = ((request.joint3) * sample_time) / total_time
 
         markerArray = MarkerArray()
         qos_profile1 = QoSProfile(depth=10)
+        self.velocity_pub = self.create_publisher(
+            Float64MultiArray, '/velocity', qos_profile1)
+        self.marker_pub = self.create_publisher(
+            MarkerArray, '/marker_pose', qos_profile1)
 
-        self.marker_pub = self.create_publisher(MarkerArray, '/marker_pose', qos_profile1)
-
-        while (i<steps):
+        while (i < steps):
             joint_state = JointState()
-            i+=1
+            i += 1
             now = self.get_clock().now()
             joint_state.header.stamp = now.to_msg()
-            joint_state.name = ['base_to_second', 'second_to_third', 'linear_joint']
-            position[0] = position[0]+ a
-            position[1] = position[1]+ b
-            position[2] = position[2]+ c
+            joint_state.name = ['base_to_second',
+                                'second_to_third', 'linear_joint']
+            position[0] = position[0] + a
+            position[1] = position[1] + b
+            position[2] = position[2] + c
             joint_state.position = position
             self.joint_pub.publish(joint_state)
             time.sleep(sample_time)
+            t = Float64MultiArray(data=[a, b, c])
+            self.velocity_pub.publish(t)
 
             marker = Marker()
             marker.header.frame_id = "/base_link"
@@ -82,31 +92,36 @@ class MinimalService(Node):
             marker.color.g = 1.0
             marker.color.b = 0.0
             marker.pose.orientation.w = 1.0
-            marker.pose.position.x = self.firstlink*cos(position[0])+self.secondlink*cos(position[1]+position[0])
-            marker.pose.position.y = self.firstlink*sin(position[0])+self.secondlink*sin(position[1]+position[0])
-            marker.pose.position.z = 0.25-position[2]
-            marker.id=i
+            marker.pose.position.x = self.firstlink * \
+                cos(position[0]) + self.secondlink * \
+                cos(position[1] + position[0])
+            marker.pose.position.y = self.firstlink * \
+                sin(position[0]) + self.secondlink * \
+                sin(position[1] + position[0])
+            marker.pose.position.z = 0.25 - position[2]
+            marker.id = i
             markerArray.markers.append(marker)
             self.marker_pub.publish(markerArray)
 
-    def interpolacja_nieliniowa(self,request):
+    def interpolacja_nieliniowa(self, request):
         qos_profile = QoSProfile(depth=10)
-        self.joint_pub = self.create_publisher(JointState, 'joint_states', qos_profile)
+        self.joint_pub = self.create_publisher(
+            JointState, 'joint_states', qos_profile)
         sample_time = 0.1
         total_time = request.time
-        steps = round(total_time/sample_time)
-        i=0
-        position=[0.0,0.0,0.0]
+        steps = round(total_time / sample_time)
+        i = 0
+        position = [0.0, 0.0, 0.0]
 
         # każdy ze stawów będzie poruszać się zgodnie z równaniem
         # y = a*x^3 + b*x^2 + c*x + d
-        a_1 = -2*(request.joint1-position[0])/(total_time**3)
-        a_2 = -2*(request.joint2-position[1])/(total_time**3)
-        a_3 = -2*(request.joint3-position[2])/(total_time**3)
+        a_1 = -2 * (request.joint1 - position[0]) / (total_time**3)
+        a_2 = -2 * (request.joint2 - position[1]) / (total_time**3)
+        a_3 = -2 * (request.joint3 - position[2]) / (total_time**3)
 
-        b_1 = 3*(request.joint1-position[0])/(total_time**2)
-        b_2 = 3*(request.joint2-position[1])/(total_time**2)
-        b_3 = 3*(request.joint3-position[2])/(total_time**2)
+        b_1 = 3 * (request.joint1 - position[0]) / (total_time**2)
+        b_2 = 3 * (request.joint2 - position[1]) / (total_time**2)
+        b_3 = 3 * (request.joint3 - position[2]) / (total_time**2)
 
         c_1 = 0
         c_2 = 0
@@ -119,22 +134,39 @@ class MinimalService(Node):
         markerArray = MarkerArray()
         qos_profile1 = QoSProfile(depth=10)
 
-        self.marker_pub = self.create_publisher(MarkerArray, '/marker_pose', qos_profile1)
+        self.velocity_pub = self.create_publisher(
+            Float64MultiArray, '/velocity', qos_profile1)
+        self.marker_pub = self.create_publisher(
+            MarkerArray, '/marker_pose', qos_profile1)
 
-        while (i<steps):
+        f = Float64MultiArray(data=[0, 0, 0])
+        self.velocity_pub.publish(f)
+
+        while (i < steps):
             joint_state = JointState()
-            i+=1
+            i += 1
             now = self.get_clock().now()
             joint_state.header.stamp = now.to_msg()
-            joint_state.name = ['base_to_second', 'second_to_third', 'linear_joint']
-            position[0] = a_1*(i*sample_time)**3 + b_1*(i*sample_time)**2 + c_1*(i*sample_time) + d_1
-            position[1] = a_2*(i*sample_time)**3 + b_2*(i*sample_time)**2 + c_2*(i*sample_time) + d_2
-            position[2] = a_3*(i*sample_time)**3 + b_3*(i*sample_time)**2 + c_3*(i*sample_time) + d_3
+            joint_state.name = ['base_to_second',
+                                'second_to_third', 'linear_joint']
+            position[0] = a_1 * (i * sample_time)**3 + b_1 * \
+                (i * sample_time)**2 + c_1 * (i * sample_time) + d_1
+            position[1] = a_2 * (i * sample_time)**3 + b_2 * \
+                (i * sample_time)**2 + c_2 * (i * sample_time) + d_2
+            position[2] = a_3 * (i * sample_time)**3 + b_3 * \
+                (i * sample_time)**2 + c_3 * (i * sample_time) + d_3
             joint_state.position = position
             self.joint_pub.publish(joint_state)
             time.sleep(sample_time)
 
-
+            v_1 = 3 * a_1 * (i * sample_time)**2 + 2 * \
+                b_1 * (i * sample_time) + c_1
+            v_2 = 3 * a_2 * (i * sample_time)**2 + 2 * \
+                b_2 * (i * sample_time) + c_2
+            v_3 = 3 * a_3 * (i * sample_time)**2 + 2 * \
+                b_3 * (i * sample_time) + c_3
+            t = Float64MultiArray(data=[v_1, v_2, v_3])
+            self.velocity_pub.publish(t)
 
             marker = Marker()
             marker.header.frame_id = "/base_link"
@@ -148,10 +180,14 @@ class MinimalService(Node):
             marker.color.g = 1.0
             marker.color.b = 0.0
             marker.pose.orientation.w = 1.0
-            marker.pose.position.x = self.firstlink*cos(position[0])+self.secondlink*cos(position[1]+position[0])
-            marker.pose.position.y = self.firstlink*sin(position[0])+self.secondlink*sin(position[1]+position[0])
-            marker.pose.position.z = 0.25-position[2]
-            marker.id=i
+            marker.pose.position.x = self.firstlink * \
+                cos(position[0]) + self.secondlink * \
+                cos(position[1] + position[0])
+            marker.pose.position.y = self.firstlink * \
+                sin(position[0]) + self.secondlink * \
+                sin(position[1] + position[0])
+            marker.pose.position.z = 0.25 - position[2]
+            marker.id = i
             markerArray.markers.append(marker)
             self.marker_pub.publish(markerArray)
 

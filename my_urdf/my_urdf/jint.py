@@ -3,6 +3,7 @@ from tutorial_interfaces.srv import Interpolation
 import rclpy
 from rclpy.node import Node
 
+
 class MinimalClientAsync(Node):
 
     def __init__(self):
@@ -14,25 +15,25 @@ class MinimalClientAsync(Node):
 
     def send_request(self):
         try:
-            if(float(sys.argv[1])>3.14 or float(sys.argv[1]) < -3.14):
+            if(float(sys.argv[1]) > 3.14 or float(sys.argv[1]) < -3.14):
                 self.get_logger().info('Niepoprawna wartość położenia stawu 1.')
                 raise ValueError()
             else:
                 self.req.joint1 = float(sys.argv[1])
 
-            if(float(sys.argv[2])>0.85 or float(sys.argv[2]) < -0.85):
+            if(float(sys.argv[2]) > 0.85 or float(sys.argv[2]) < -0.85):
                 self.get_logger().info('Niepoprawna wartość położenia stawu 2.')
                 raise ValueError()
             else:
-                self.req.joint2= float(sys.argv[2])
+                self.req.joint2 = float(sys.argv[2])
 
-            if(float(sys.argv[3])>0.1 or float(sys.argv[3]) < 0):
+            if(float(sys.argv[3]) > 0.1 or float(sys.argv[3]) < 0):
                 self.get_logger().info('Niepoprawna wartość położenia stawu 3.')
                 raise ValueError()
             else:
                 self.req.joint3 = float(sys.argv[3])
 
-            if(float(sys.argv[4])<=0):
+            if(float(sys.argv[4]) <= 0):
                 self.get_logger().info('Niepoprawna wartość czasu')
                 raise ValueError()
             else:

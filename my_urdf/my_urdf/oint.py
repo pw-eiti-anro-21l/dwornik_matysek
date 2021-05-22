@@ -3,6 +3,7 @@ from tutorial_interfaces.srv import Interpolation2
 import rclpy
 from rclpy.node import Node
 
+
 class MinimalClientAsync2(Node):
 
     def __init__(self):
@@ -15,10 +16,10 @@ class MinimalClientAsync2(Node):
     def send_request(self):
 
         self.req.x = float(sys.argv[1])
-        self.req.y= float(sys.argv[2])
+        self.req.y = float(sys.argv[2])
         self.req.z = float(sys.argv[3])
         self.req.roll = float(sys.argv[4])
-        self.req.pitch= float(sys.argv[5])
+        self.req.pitch = float(sys.argv[5])
         self.req.yaw = float(sys.argv[6])
         self.req.time = float(sys.argv[7])
         self.req.method = int(sys.argv[8])
