@@ -32,7 +32,8 @@ setup(
             'client = my_urdf.jint:main',
             'service2 = my_urdf.oint_control_srv:main',
             'client2 = my_urdf.oint:main',
-            'ikin = my_urdf.ikin:main'
+            'ikin = my_urdf.ikin:main',
+            'ocmd = my_urdf.ocmd:main'
         ],
     },
 )
