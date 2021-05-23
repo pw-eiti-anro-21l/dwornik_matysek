@@ -23,11 +23,11 @@ class Ocmd(Node):
             a=1
             b=2
             if self.i<l/2:
-                x=b-self.i*b/20
+                x=b-self.i*b*4/l
                 msg.pose.position.x = x
                 msg.pose.position.y = (1-x*x/(b*b))*a*a
             else:
-                x=-b+(self.i-40)*b/20
+                x=-b+(self.i-l/2)*4/l
                 msg.pose.position.x = x
                 msg.pose.position.y = -(1-x*x/(b*b))*a*a
         else:
