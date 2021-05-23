@@ -136,7 +136,7 @@ class MinimalService(Node):
         total_time = request.time
         steps = round(total_time / sample_time)
         i = 0
-        position = [self.firstlink+self.secondlink, 0.0, 0.3, 0.0, 0.0, 0.0]
+        position = [self.firstlink+self.secondlink, 0.0, 0.25, 0.0, 0.0, 0.0]
 
         # każdy ze stawów będzie poruszać się zgodnie z równaniem
         # y = a*x^3 + b*x^2 + c*x + d
