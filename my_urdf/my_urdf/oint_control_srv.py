@@ -42,6 +42,12 @@ class MinimalService(Node):
         super().__init__('minimal_service')
         self.srv = self.create_service(
             Interpolation2, 'interpolacja', self.interpolacja)
+        self.marker = Marker()
+        self.markerArray = MarkerArray()
+        self.marker_pub = self.create_publisher(
+            MarkerArray, '/marker_pose', 10)
+        self.publisher_ = self.create_publisher(
+            PoseStamped, '/pose_stamped_lab4', 10)
         yaml_file = os.path.join(
             get_package_share_directory('my_urdf'), "param.yaml")
         with open(yaml_file, 'r') as stream:
@@ -71,7 +77,7 @@ class MinimalService(Node):
         total_time = request.time
         steps = round(total_time / sample_time)
         i = 0
-        position = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        position = [self.firstlink+self.secondlink, 0.0, 0.25, 0.0, 0.0, 0.0]
         a = ((request.x) * sample_time) / total_time
         b = ((request.y) * sample_time) / total_time
         c = ((request.z) * sample_time) / total_time
@@ -82,11 +88,7 @@ class MinimalService(Node):
         markerArray = MarkerArray()
         qos_profile1 = QoSProfile(depth=10)
 
-        self.marker_pub = self.create_publisher(
-            MarkerArray, '/marker_pose', qos_profile1)
 
-        self.publisher_ = self.create_publisher(
-            PoseStamped, '/pose_stamped_lab4', 10)
         pose = PoseStamped()
 
         while (i < steps):
@@ -107,24 +109,24 @@ class MinimalService(Node):
                 position[3], position[4], position[5])
             self.publisher_.publish(pose)
 
-            marker = Marker()
-            marker.header.frame_id = "/base_link"
-            marker.type = marker.SPHERE
-            marker.action = marker.ADD
-            marker.scale.x = 0.02
-            marker.scale.y = 0.02
-            marker.scale.z = 0.02
-            marker.color.a = 1.0
-            marker.color.r = 1.0
-            marker.color.g = 1.0
-            marker.color.b = 0.0
-            marker.pose.orientation.w = 1.0
-            marker.pose.position.x = position[0]
-            marker.pose.position.y = position[1]
-            marker.pose.position.z = position[2]
-            marker.id = i
-            markerArray.markers.append(marker)
-            self.marker_pub.publish(markerArray)
+
+            self.marker.header.frame_id = "/base_link"
+            self.marker.type = self.marker.SPHERE
+            self.marker.action = self.marker.ADD
+            self.marker.scale.x = 0.02
+            self.marker.scale.y = 0.02
+            self.marker.scale.z = 0.02
+            self.marker.color.a = 1.0
+            self.marker.color.r = 1.0
+            self.marker.color.g = 1.0
+            self.marker.color.b = 0.0
+            self.marker.pose.orientation.w = 1.0
+            self.marker.pose.position.x = position[0]
+            self.marker.pose.position.y = position[1]
+            self.marker.pose.position.z = position[2]
+            self.marker.id = i
+            self.markerArray.markers.append(self.marker)
+            self.marker_pub.publish(self.markerArray)
 
             time.sleep(sample_time)
 
@@ -180,6 +182,13 @@ class MinimalService(Node):
         marker = Marker()
         marker.action = marker.DELETEALL
 
+
+
+        self.marker.action = self.marker.DELETEALL
+        self.marker.header.frame_id = "/base_link"
+        self.markerArray.markers.append(self.marker)
+        self.marker_pub.publish(self.markerArray)
+
         while (i < steps):
             joint_state = JointState()
             i += 1
@@ -209,23 +218,23 @@ class MinimalService(Node):
                 position[3], position[4], position[5])
             self.publisher_.publish(pose)
 
-            marker.header.frame_id = "/base_link"
-            marker.type = marker.SPHERE
-            marker.action = marker.ADD
-            marker.scale.x = 0.02
-            marker.scale.y = 0.02
-            marker.scale.z = 0.02
-            marker.color.a = 1.0
-            marker.color.r = 1.0
-            marker.color.g = 1.0
-            marker.color.b = 0.0
-            marker.pose.orientation.w = 1.0
-            marker.pose.position.x = position[0]
-            marker.pose.position.y = position[1]
-            marker.pose.position.z = position[2]
-            marker.id = i
-            markerArray.markers.append(marker)
-            self.marker_pub.publish(markerArray)
+            self.marker.header.frame_id = "/base_link"
+            self.marker.type = self.marker.SPHERE
+            self.marker.action = self.marker.ADD
+            self.marker.scale.x = 0.02
+            self.marker.scale.y = 0.02
+            self.marker.scale.z = 0.02
+            self.marker.color.a = 1.0
+            self.marker.color.r = 1.0
+            self.marker.color.g = 1.0
+            self.marker.color.b = 0.0
+            self.marker.pose.orientation.w = 1.0
+            self.marker.pose.position.x = position[0]
+            self.marker.pose.position.y = position[1]
+            self.marker.pose.position.z = position[2]
+            self.marker.id = i
+            self.markerArray.markers.append(self.marker)
+            self.marker_pub.publish(self.markerArray)
 
             time.sleep(sample_time)
 

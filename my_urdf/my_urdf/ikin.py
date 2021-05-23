@@ -8,15 +8,20 @@ from sensor_msgs.msg import JointState
 from geometry_msgs.msg import PoseStamped
 from nav_msgs.msg import Path
 from tf2_ros import TransformBroadcaster, TransformStamped
+from visualization_msgs.msg import Marker, MarkerArray
 from rclpy.clock import ROSClock
 from copy import deepcopy
 from PyKDL import *
-from math import acos, sin, cos, asin
+from math import acos, sin, cos, asin, atan2
 
 
 class Ikin(Node):
     def __init__(self):
         super().__init__('ikin')
+        self.marker = Marker()
+        self.markerArray = MarkerArray()
+        self.marker_pub = self.create_publisher(
+            MarkerArray, '/marker_pose', 10)
 
         self.subscription = self.create_subscription(
             PoseStamped,
@@ -36,6 +41,7 @@ class Ikin(Node):
         self.x = 0
         self.y = 0
         self.z = 0
+        self.i = 0
         self.joint_state = JointState()
         self.joint_state.name = ['base_to_second',
                                  'second_to_third', 'linear_joint']
@@ -50,6 +56,22 @@ class Ikin(Node):
                 self.secondlink = self.param.get("secondlink")
             except:
                 pass
+        self.marker_init()
+
+    def marker_init(self):
+        self.marker.header.frame_id = "/base_link"
+        self.marker.action = self.marker.DELETEALL
+        self.marker.header.frame_id = "/base_link"
+        self.markerArray.markers.append(self.marker)
+        self.marker_pub.publish(self.markerArray)
+        self.marker.scale.x = 0.02
+        self.marker.scale.y = 0.02
+        self.marker.scale.z = 0.02
+        self.marker.color.a = 1.0
+        self.marker.color.r = 1.0
+        self.marker.color.g = 1.0
+        self.marker.color.b = 0.0
+        self.marker.pose.orientation.w = 1.0
 
     def listener_callback(self, msg):
         self.x = msg.pose.position.x
@@ -67,21 +89,29 @@ class Ikin(Node):
             k_1 = self.firstlink + self.secondlink * c_2
             k_2 = self.secondlink * sin(sigma_2)
 
-            s_1 = -(k_2 * self.x + self.y * k_1) / (k_1**2 + k_2**2)
-            if(s_1 > 1 or s_1 < -1):
-                print("Cringe.")
-            else:
-                sigma_1 = asin(s_1)
-                self.joint_state.position = [-sigma_1, -sigma_2, 0.25 - self.z]
-                print(self.joint_state.position)
-                now = self.get_clock().now()
-                self.joint_state.header.stamp = now.to_msg()
-                self.publisher.publish(self.joint_state)
 
-                self.path.header.frame_id = "path"
-                self.path.header.stamp = now.to_msg()
-                self.path.poses.append(deepcopy(msg))
-                self.path_publisher.publish(self.path)
+            sigma_1 = atan2(self.y, self.x) - atan2(k_2, k_1)
+            self.joint_state.position = [sigma_1, sigma_2, 0.25 - self.z]
+            now = self.get_clock().now()
+            self.joint_state.header.stamp = now.to_msg()
+            self.publisher.publish(self.joint_state)
+
+            self.marker.pose.position.x = self.x
+            self.marker.pose.position.y = self.y
+            self.marker.pose.position.z = self.z
+            self.marker.id = self.i
+            self.marker.type = self.marker.SPHERE
+            self.marker.action = self.marker.ADD
+            self.markerArray.markers.append(self.marker)
+            self.marker_pub.publish(self.markerArray)
+
+            self.i+=1
+
+            # self.path.header.frame_id = "path"
+            # self.path.header.stamp = now.to_msg()
+            # self.path.poses.append(deepcopy(msg))
+            # self.path_publisher.publish(self.path)
+
 
 def main(args=None):
     rclpy.init(args=args)
