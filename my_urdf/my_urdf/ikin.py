@@ -98,7 +98,7 @@ class Ikin(Node):
 
             self.marker.pose.position.x = self.x
             self.marker.pose.position.y = self.y
-            self.marker.pose.position.z = self.z
+            self.marker.pose.position.z = self.z - 0.10
             self.marker.id = self.i
             self.marker.type = self.marker.SPHERE
             self.marker.action = self.marker.ADD

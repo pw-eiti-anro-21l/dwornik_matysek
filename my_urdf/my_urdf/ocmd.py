@@ -27,7 +27,7 @@ class Ocmd(Node):
                 msg.pose.position.x = x
                 msg.pose.position.y = (1-x*x/(b*b))*a*a
             else:
-                x=-b+(self.i-l/2)*4/l
+                x=-b+(self.i-l/2)*b*4/l
                 msg.pose.position.x = x
                 msg.pose.position.y = -(1-x*x/(b*b))*a*a
         else:
@@ -47,13 +47,13 @@ class Ocmd(Node):
             else:
                 msg.pose.position.x = float(a)
                 msg.pose.position.y = float(-a+(self.i-7*l/8)*a*8/l)
-        msg.pose.position.z = float(0.1)
+        msg.pose.position.z = float(0.25)
         if self.i==(l-1):
             self.i=-1
         self.publisher_.publish(msg)
         self.get_logger().info('Publishing: "%s"' % msg.pose.position)
         self.i += 1
-        
+
 
 
 def main(args=None):

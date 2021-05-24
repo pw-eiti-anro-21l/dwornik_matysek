@@ -48,7 +48,7 @@
     <axis xyz="0 0 1"/>
   </joint>
   <joint name="second_to_third" type="revolute">
-    <limit effort="1000.0" lower="-0.85" upper="0.85" velocity="0.5"/>
+    <limit effort="1000.0" lower="-2.8" upper="2.8" velocity="0.5"/>
     <parent link="second_link"/>
     <child link="third_link"/>
     <origin rpy="0 0 0" xyz="${param['firstlink']} 0 0" />
